@@ -31,7 +31,7 @@ class ReviewContainer extends Component {
                 <Container>
                     Reviews: 
                     {reviews}
-                    <ReviewForm />
+                    <ReviewForm matchProps={this.props.matchProps}/>
                 </Container>
             </div>
         );

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Form, Button } from 'semantic-ui-react'
+import { Form, Button, Rating } from 'semantic-ui-react'
 
 class ReviewForm extends Component {
 
     state={
-        comment: ""
+        comment: "",
+        rating: 0
     }
 
     handleChange = (event) => {
@@ -24,29 +25,42 @@ class ReviewForm extends Component {
                 "content-type": "application/json",
                 "Authorization": `bearer ${localStorage.token}`
             },
-            body: JSON.stringify()
+            body: JSON.stringify({
+                comment: this.state.comment,
+                rating: this.state.rating,
+                item_id: parseInt(this.props.matchProps.params.id)
+            })
+        })
+        .then(r => r.json())
+        .then(review => {
+            this.setState({
+                comment: review.comment,
+                rating: review.rating
+            })
         })
     }
 
     render() {
-
+        // console.log(this.props.matchProps.params)
         return (
             
             <Form onSubmit={this.createReview}>
                 <Form.TextArea
-                    // <label>Comment</label>
-                    // <input 
-                    //     type="textarea"
-                    //     placeholder="Comment"
-                    //     name="comment"
-                    //     value={this.state.comment}
-                    // />
                     label='Review'
                     placeholder="Write your thoughts"
                     name="comment"
                     value={this.state.comment}
                     onChange={this.handleChange}
                 />
+                <Rating
+                    name="rating"
+                    value={this.state.rating}
+                    onChange={this.handleChange}
+                    icon="star" 
+                    maxRating={5} 
+                    clearable
+                />
+                <br/>
                 <Button type='submit'>Submit</Button>
             </Form>
         )

@@ -25,7 +25,7 @@ const ItemCard = (props) => {
                 <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image" wrapped ui={false}/>
                 <Card.Content>
                     <Card.Header>{props.item.title}</Card.Header>
-                    <Rating icon='star' defaultRating={props.item.reviews.length} maxRating={5} />
+                    <Rating icon='star' defaultRating={props.item.reviews.length} maxRating={5} disabled/>
                 </Card.Content>
                 <Card.Content extra>
                     <p>Price:</p>
@@ -33,7 +33,6 @@ const ItemCard = (props) => {
                 </Card.Content>
                 <Button className="add-to-cart-btn">Add to cart</Button>
             </Card>
-
     );
 };
 
