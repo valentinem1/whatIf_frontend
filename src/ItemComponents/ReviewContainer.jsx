@@ -31,6 +31,7 @@ class ReviewContainer extends Component {
                 <Container>
                     Reviews: 
                     {reviews}
+                    <ReviewForm />
                 </Container>
             </div>
         );

@@ -3,7 +3,7 @@ import { Container } from 'semantic-ui-react'
 
 const ReviewCard = (props) => {
 
-    console.log(props)
+    // console.log(props)
 
     return (
 
