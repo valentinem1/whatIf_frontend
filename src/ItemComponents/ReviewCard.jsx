@@ -1,11 +1,18 @@
 import React from 'react';
+import { Container } from 'semantic-ui-react'
 
-const ReviewCard = () => {
+const ReviewCard = (props) => {
+
+    console.log(props)
+
     return (
-        <div>
-            
-        </div>
+
+            <Container>
+                {props.review.comment}
+            </Container>
+        
     );
+
 };
 
 export default ReviewCard;

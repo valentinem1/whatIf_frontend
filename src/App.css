@@ -2,3 +2,44 @@
   margin-left: 10vw !important;
   margin-right: 10vw !important;
 } */
+
+.cib-etsy{
+  color: #f0f0f0 !important;
+}
+
+.logo{
+  background-color: darkorange !important;
+  font-size: 6vw !important;
+  margin-bottom: 10hw !important;
+}
+
+.ui.six.cards{
+  margin-top: 7vh;
+  margin-left: 4vw;
+}
+
+.add-to-cart-btn{
+  background-color: #000000 !important;
+  color: #f0f0f0 !important;
+}
+
+.add-to-cart-btn:hover{
+  background-color: #222222 !important;
+  color: #f0f0f0 !important;
+}
+
+.item-card{
+  height: 70vh !important;
+  margin-left: 2vw !important;
+  margin-bottom: 3vh !important;
+}
+
+.logged-in-menu-bar{
+  width: 13.7vw !important;
+  float: right;
+}
+
+.signup-menu-bar{
+  width: 9.8vw !important;
+  float: right;
+}

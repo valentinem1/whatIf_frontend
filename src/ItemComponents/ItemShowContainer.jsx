@@ -8,7 +8,7 @@ const ItemShowContainer = (props) => {
     return (
         <div>
             <InfoContainer matchProps={props.match}/>
-            <ReviewContainer />
+            <ReviewContainer matchProps={props.match}/>
         </div>
 
     );

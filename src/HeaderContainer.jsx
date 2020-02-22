@@ -16,12 +16,12 @@ class HeaderContainer extends Component {
 
             <div>
 
-            <Segment>
-                <Header><Link to="/"><i className="cib-etsy">WhatIf</i></Link></Header>
+            <Segment className="logo">
+                <Header><Link to="/"><i className="cib-etsy">Watif</i></Link></Header>
                 
                         {localStorage.token ? 
                         <Header>
-                        <Menu>
+                        <Menu className="logged-in-menu-bar">
                         <Menu.Item>
                             <Link to="/profile">Profile</Link>
                         </Menu.Item>
@@ -30,7 +30,7 @@ class HeaderContainer extends Component {
                         </Menu.Item>
                         </Menu>
                         </Header> : 
-                        <Header>
+                        <Header className="signup-menu-bar">
                         <Menu>
                         <Menu.Item>
                             <Link to="/signup">SignUp</Link>
