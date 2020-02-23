@@ -5,9 +5,9 @@ export const fetchItems = (items) => {
     }
 }
 
-export const addReview = (review) => {
-    return {
-        type: "ADD_REVIEW",
-        review
-    }
-}
+// export const addReview = (review) => {
+//     return {
+//         type: "ADD_REVIEW",
+//         review
+//     }
+// }

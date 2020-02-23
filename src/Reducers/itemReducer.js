@@ -9,8 +9,8 @@ const itemReducer = (state=initialState, action) => {
         case "FETCH ITEMS":
             return action.items
 
-        case "ADD_REVIEW":
-            return state
+        // case "ADD_REVIEW":
+        //     return action.review
             
         default:
             return state;

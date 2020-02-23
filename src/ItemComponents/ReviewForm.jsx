@@ -8,35 +8,21 @@ class ReviewForm extends Component {
         rating: 0
     }
 
-    handleChange = (event) => {
+    handleChange = (event, { rating }) => {
         let {name, value} = event.target
 
         this.setState({
-            [name]: value
+            [name]: value,
+            rating
         })
     }
 
-    createReview = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault()
-
-        fetch('http://localhost:4000/reviews', {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                "Authorization": `bearer ${localStorage.token}`
-            },
-            body: JSON.stringify({
-                comment: this.state.comment,
-                rating: this.state.rating,
-                item_id: parseInt(this.props.matchProps.params.id)
-            })
-        })
-        .then(r => r.json())
-        .then(review => {
-            this.setState({
-                comment: review.comment,
-                rating: review.rating
-            })
+        this.props.createReview(this.state)
+        this.setState({
+            comment: "",
+            rating: 0
         })
     }
 
@@ -44,7 +30,7 @@ class ReviewForm extends Component {
         // console.log(this.props.matchProps.params)
         return (
             
-            <Form onSubmit={this.createReview}>
+            <Form onSubmit={this.handleSubmit}>
                 <Form.TextArea
                     label='Review'
                     placeholder="Write your thoughts"
@@ -54,8 +40,8 @@ class ReviewForm extends Component {
                 />
                 <Rating
                     name="rating"
-                    value={this.state.rating}
-                    onChange={this.handleChange}
+                    // value={this.state.rating}
+                    onRate={this.handleChange}
                     icon="star" 
                     maxRating={5} 
                     clearable
@@ -67,4 +53,4 @@ class ReviewForm extends Component {
     }
 }
 
-export default ReviewForm
+export default ReviewForm;
