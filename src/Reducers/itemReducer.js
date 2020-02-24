@@ -13,7 +13,7 @@ const itemReducer = (state=initialState, action) => {
             // debugger
             // let newQuantity = action.item.quantity - 1
             let updatedItem = state.map(item => item.id === action.item.id ? action.item : item)
-            console.log(updatedItem)
+            // console.log(updatedItem)
             return updatedItem
 
         default:

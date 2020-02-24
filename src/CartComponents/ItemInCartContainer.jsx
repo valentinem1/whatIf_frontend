@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { connect } from 'react-redux'
+class ItemInCartContainer extends Component {
 
-const ItemInCartContainer = (props) => {
+    state={
 
-    console.log(props.cartItem)
-    return (
-
-        <div>
-            
-        </div>
-    );
-
-};
-
-const mapStateToProps = (state) => {
-    return {
-        cartItem: state.cartItem
     }
+
+    componentDidMount() {
+        fetch('http://localhost:4000/persist',{
+            headers:{
+                "Authorization": `bearer ${localStorage.token}`
+            }
+        })
+        .then(r => r.json())
+        .then(userData => {
+            this.setState({
+                ...userData
+            })
+        })
+    }
+    
+
+    render() {
+        // debugger
+        console.log(this.state)
+        return (
+            <div>
+                
+            </div>
+        );
+    }
+
 }
 
-export default connect(mapStateToProps)(ItemInCartContainer);
+export default ItemInCartContainer;
