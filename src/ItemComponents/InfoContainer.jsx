@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import { Image, Header, Container, Icon, Label, Button } from 'semantic-ui-react'
+import { Image, Header, Container, Icon, Label } from 'semantic-ui-react'
 
 import { connect } from 'react-redux'
-import { addToCart } from '../Actions/CartActions'
 
 class InfoContainer extends Component {
     
@@ -19,18 +18,13 @@ class InfoContainer extends Component {
                 <Container>
                     <Header>{item.title}</Header>
                     <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
-                
-                    <p>
-                        {item.description}
-                    </p>
+                    <p>{item.description}</p>
                     <Label>
                         <Icon>Quantity: {item.quantity}</Icon>
                     </Label>
                     <Label>
                         <Icon>Price: ${item.price}</Icon>
                     </Label>
-                    <br/>
-                    {/* <Button className="add-to-cart-btn" onClick={this.addToCart}>Add to cart</Button> */}
                 </Container>
             </div>
         );
@@ -41,7 +35,6 @@ class InfoContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-    // debugger
     return{
         items: state.items
     }

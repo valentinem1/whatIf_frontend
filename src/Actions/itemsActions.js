@@ -6,7 +6,6 @@ export const fetchItems = (items) => {
 }
 
 export const decreaseItemQuantity = (item) => {
-    console.log(item)
     return{
         type: "DECREASE_ITEM_QUANTITY",
         item
