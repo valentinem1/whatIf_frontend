@@ -147,7 +147,6 @@ class LoginSignupForm extends Component {
             })
             .then(r => r.json())
             .then(userData => {
-                console.log(userData)
                 localStorage.setItem("token", userData.token)
                 this.props.setUser(userData.user)
                 this.props.history.push("/profile")

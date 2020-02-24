@@ -12,6 +12,8 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
 
 import ItemShowContainer from './ItemComponents/ItemShowContainer'
 
+import CartContainer from './CartComponents/CartContainer'
+
 import { connect } from 'react-redux'
 import { fetchItems } from './Actions/itemsActions'
 import { userPersist } from './Actions/userActions'
@@ -40,7 +42,6 @@ class App extends Component {
     }
   }
   
-
   render() {
 
     return (
@@ -54,6 +55,7 @@ class App extends Component {
           <Route exact path="/profile" component={ ProfileContainer } />
           <Route exact path='/login' component={ LoginSignupForm }/>
           <Route exact path='/signup' component={ LoginSignupForm }/>
+          <Route exact path="/cart" component={ CartContainer } />
           <Route path='/:id' component={ ItemShowContainer } />
         </Switch>
 

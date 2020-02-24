@@ -1,49 +1,53 @@
 import React, { Component } from 'react';
 
-import { Image, Header, Container, Icon, Label } from 'semantic-ui-react'
+import { Image, Header, Container, Icon, Label, Button } from 'semantic-ui-react'
+
+import { connect } from 'react-redux'
+import { addToCart } from '../Actions/CartActions'
 
 class InfoContainer extends Component {
     
-    state = {
-
-    }
-    componentDidMount() {
-        const item_id = this.props.matchProps.params.id
-
-        fetch(`http://localhost:4000/items/${item_id}`)
-        .then(r => r.json())
-        .then(itemData => {
-            this.setState({
-                ...itemData
-            })
-        })
-    }
-    
     render() {
-        // console.log(this.state)
+        const item_id = parseInt(this.props.matchProps.params.id)
+        let item = this.props.items.find(item => item.id === item_id)
+
+        // console.log(item)
+        if(item){
+
         return (
             <div>
                 <Container>
-                    <Header>{this.state.title}</Header>
+                    <Header>{item.title}</Header>
                     <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
                 
                     <p>
-                        {this.state.description}
+                        {item.description}
                     </p>
                     <Label>
-                        <Icon>Quantity: {this.state.quantity}</Icon>
+                        <Icon>Quantity: {item.quantity}</Icon>
                     </Label>
                     <Label>
-                        <Icon>Price: ${this.state.price}</Icon>
+                        <Icon>Price: ${item.price}</Icon>
                     </Label>
+                    <br/>
+                    {/* <Button className="add-to-cart-btn" onClick={this.addToCart}>Add to cart</Button> */}
                 </Container>
             </div>
         );
+        }
+        return null
     }
     
 }
 
-export default InfoContainer;
+const mapStateToProps = (state) => {
+    // debugger
+    return{
+        items: state.items
+    }
+}
+
+export default connect(mapStateToProps)(InfoContainer);
 
 
 

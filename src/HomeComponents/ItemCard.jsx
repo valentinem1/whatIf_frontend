@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Rating, Button } from 'semantic-ui-react'
+import { Card, Image, Rating } from 'semantic-ui-react'
 
 const ItemCard = (props) => {
 
@@ -31,7 +31,6 @@ const ItemCard = (props) => {
                     <p>Price:</p>
                     <b>${props.item.price}</b>
                 </Card.Content>
-                <Button className="add-to-cart-btn">Add to cart</Button>
             </Card>
     );
 };
