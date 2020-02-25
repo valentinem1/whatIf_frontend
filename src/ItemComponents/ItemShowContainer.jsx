@@ -4,7 +4,7 @@ import InfoContainer from './InfoContainer'
 import ReviewContainer from './ReviewContainer'
 
 import { connect } from 'react-redux'
-import { addToCart } from '../Actions/CartActions'
+import { addToCart } from '../Actions/userActions'
 import { decreaseItemQuantity } from '../Actions/itemsActions'
 
 import { Button } from 'semantic-ui-react'

@@ -9,8 +9,8 @@
 
 .logo{
   background-color: darkorange !important;
-  font-size: 6vw !important;
-  margin-bottom: 10hw !important;
+  font-size: 4vw !important;
+  margin-bottom: 6vh !important;
 }
 
 .ui.six.cards{
@@ -29,7 +29,7 @@
 }
 
 .item-card{
-  height: 70vh !important;
+  height: 60vh !important;
   margin-left: 2vw !important;
   margin-bottom: 3vh !important;
 }

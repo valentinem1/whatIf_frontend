@@ -5,16 +5,17 @@ export const setUser = (newUser) => {
     }
 }
 
-// export const userProfile = (userProfile) => {
-//     return {
-//         type: "PROFILE_USER",
-//         userProfile
-//     }
-// }
-
 export const userPersist = (persistedUser) => {
     return {
         type: "PERSIST_USER",
         persistedUser
+    }
+}
+
+export const addToCart = (cartItem) => {
+    // console.log(cartItem)
+    return {
+        type: "ADD_TO_CART", 
+        cartItem
     }
 }

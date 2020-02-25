@@ -152,37 +152,9 @@ class LoginSignupForm extends Component {
                 this.props.history.push("/profile")
             })
 
-        // }else if(pathname === "/signup"){
-
-        //     fetch('http://localhost:4000/users', {
-        //         method: "POST",
-        //         headers: {
-        //             "content-type": "application/json",
-        //         },
-        //         body: JSON.stringify(this.state)
-        //     })
-        //     .then(r => r.json())
-        //     .then(newUser => {
-        //         if(!newUser.error){
-        //             localStorage.setItem("token", newUser.token)
-        //             this.props.setUser(newUser)
-        //             this.props.routerProps.history.push("/")
-        //         }
-        //         this.setState({
-        //             first_name: "",
-        //             last_name: "",
-        //             username: "",
-        //             address: "",
-        //             email: "",
-        //             picture: "",
-        //             password: ""
-        //         })
-        //     })
+        }
         
-        // }
-    }
-
-    render() {
+        render() {
         // console.log(this.props)
         return (
 
@@ -197,3 +169,42 @@ class LoginSignupForm extends Component {
 }
 
 export default connect(null, { setUser })(LoginSignupForm);
+
+
+
+
+
+
+
+
+
+
+
+                // }else if(pathname === "/signup"){
+                
+                //     fetch('http://localhost:4000/users', {
+                //         method: "POST",
+                //         headers: {
+                //             "content-type": "application/json",
+                //         },
+                //         body: JSON.stringify(this.state)
+                //     })
+                //     .then(r => r.json())
+                //     .then(newUser => {
+                //         if(!newUser.error){
+                //             localStorage.setItem("token", newUser.token)
+                //             this.props.setUser(newUser)
+                //             this.props.routerProps.history.push("/")
+                //         }
+                //         this.setState({
+                //             first_name: "",
+                //             last_name: "",
+                //             username: "",
+                //             address: "",
+                //             email: "",
+                //             picture: "",
+                //             password: ""
+                //         })
+                //     })
+                
+                // }

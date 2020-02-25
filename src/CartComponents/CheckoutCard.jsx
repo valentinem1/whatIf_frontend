@@ -8,16 +8,12 @@ const CheckoutCard = (props) => {
 
     // debugger
     const cartTotalPrice = () => {
-        if(props.userCard){
+        if(props.userCart && props.userCart.length > 0){
             let price = props.userCart.map(item => item.price)
         
-            function myFunc(total, num) {
-            return total + num;
-            }
-        
-            let totalPrice = price.reduce(myFunc)
+            let totalPrice = price.reduce((total, num) => total + num)
             return totalPrice
-        } else{
+        }else{
             return null
         }
     }
@@ -30,12 +26,12 @@ const CheckoutCard = (props) => {
             return null
         }
     }
-    
+
     return (
 
         <Segment>
             Item(s) total:
-            {cartTotalPrice()}
+            ${cartTotalPrice()}
             <br/>
             Shipping: $10
             <br/>
@@ -43,7 +39,7 @@ const CheckoutCard = (props) => {
             <br/>
             <Button>Checkout</Button>
         </Segment>
-    );
+        );
 
 };
 

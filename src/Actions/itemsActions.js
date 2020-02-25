@@ -11,10 +11,3 @@ export const decreaseItemQuantity = (item) => {
         item
     }
 }
-
-// export const addReview = (review) => {
-//     return {
-//         type: "ADD_REVIEW",
-//         review
-//     }
-// }
