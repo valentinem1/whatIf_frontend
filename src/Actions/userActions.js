@@ -19,3 +19,10 @@ export const addToCart = (cartItem) => {
         cartItem
     }
 }
+
+export const removeFromCart = (cartItem) => {
+    return {
+        type: "REMOVE_FROM_CART",
+        cartItem
+    }
+}

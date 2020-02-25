@@ -10,7 +10,7 @@ const ItemContainer = (props) => {
 
     return (
 
-        <Card.Group itemsPerRow={6} >
+        <Card.Group itemsPerRow={6}>
             {props.items.map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
         </Card.Group>
 

@@ -9,9 +9,14 @@ const ReviewCard = (props) => {
         props.deleteReview(props.review.id)
     }
 
+    const showDeleteButtom = () => {
+        if(localStorage.token){
+            return <button onClick={handleDelete}>x</button>
+        }
+    }
     return (
             <Container>
-                <button onClick={handleDelete}>x</button>
+                {showDeleteButtom()}
                 {props.review.comment}
                 <Rating icon='star' defaultRating={props.review.rating} maxRating={5} disabled /> 
             </Container>

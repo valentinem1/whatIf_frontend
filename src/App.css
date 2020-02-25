@@ -29,13 +29,13 @@
 }
 
 .item-card{
-  height: 60vh !important;
+  height: 50vh !important;
   margin-left: 2vw !important;
   margin-bottom: 3vh !important;
 }
 
 .logged-in-menu-bar{
-  width: 13.7vw !important;
+  width: 10.8vw !important;
   float: right;
 }
 

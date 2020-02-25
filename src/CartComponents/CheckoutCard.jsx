@@ -4,12 +4,10 @@ import { connect } from 'react-redux'
 import { Segment, Button } from 'semantic-ui-react'
 
 const CheckoutCard = (props) => {
-    // console.log(props.userCart)
 
-    // debugger
     const cartTotalPrice = () => {
         if(props.userCart && props.userCart.length > 0){
-            let price = props.userCart.map(item => item.price)
+            let price = props.userCart.map(cartItem => cartItem.item.price)
         
             let totalPrice = price.reduce((total, num) => total + num)
             return totalPrice
