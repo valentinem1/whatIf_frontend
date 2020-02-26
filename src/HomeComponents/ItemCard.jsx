@@ -3,11 +3,21 @@ import { Card, Image, Rating, Header } from 'semantic-ui-react'
 
 const ItemCard = (props) => {
 
+    // in case of API giving back a title of null 
+    const itemTitle = () => {
+        if(props.item){
+           return <> {props.item.title.slice(0, 35)}{props.item.title.length > 30 ? "..." : null } </>
+        }else{
+            return null
+        }
+    }
+
     return(
             <Card className="item-card">
                 <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image" wrapped ui={false}/>
                 <Card.Content>
-                    <Header as='h4'>{props.item.title.slice(0, 35)}{props.item.title.length > 30 ? "..." : null }</Header>
+                    {/* <Header as='h4'>{props.item.title.slice(0, 35)}{props.item.title.length > 30 ? "..." : null }</Header> */}
+                <Header>{itemTitle()}</Header>
                     <Rating icon='star' defaultRating={!props.item.reviews.length ? null : props.item.reviews.length} maxRating={5} disabled/>
                 </Card.Content>
                 <Card.Content extra>

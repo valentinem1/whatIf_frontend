@@ -13,11 +13,27 @@ const userReducer = (state=initialState, action) => {
             return action.persistedUser
 
         case "ADD_TO_CART":
-            return {...state, cart: [...state.cart, action.cartItem]}
+            let found_item = state.cart.find(cartItem => cartItem.item.id === action.cartItem.item.id)
+            
+            if(found_item){
+                let newArr = state.cart.map(cartItem => {
+                    if(cartItem.id === action.cartItem.item.id){
+                        const newObj = {
+                            ...action.cartItem.item
+                        }
+                        return newObj
+                    }
+                    return cartItem
+                })
+                return {...state, cart: newArr}
+            }
+            else{
+                return {...state, cart: [...state.cart, action.cartItem]}
+            }
 
         case "REMOVE_FROM_CART":
-
-            let newArr = state.cart.filter(item => item.id !== action.cartItem.cart_joiner.id)
+            // console.log(action.cartItem)
+            let newArr = state.cart.filter(item => item.id !== action.cartItem.cart_joiner.item_id)
             return {...state, cart: newArr}
             
         default:

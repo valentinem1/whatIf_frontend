@@ -15,6 +15,9 @@ const itemReducer = (state=initialState, action) => {
             // console.log(updatedItem)
             return updatedItem
 
+        case "INCREASE_ITEM_QUANTITY":
+            let newQuantity = state.map(item => item.id === action.item.id ? action.item : item)
+            return newQuantity
         default:
             return state;
             
