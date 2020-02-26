@@ -7,7 +7,7 @@ const ItemCard = (props) => {
             <Card className="item-card">
                 <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image" wrapped ui={false}/>
                 <Card.Content>
-                    <Header as='h4'>{props.item.title.slice(0, 30)}...</Header>
+                    <Header as='h4'>{props.item.title.slice(0, 35)}{props.item.title.length > 30 ? "..." : null }</Header>
                     <Rating icon='star' defaultRating={!props.item.reviews.length ? null : props.item.reviews.length} maxRating={5} disabled/>
                 </Card.Content>
                 <Card.Content extra>

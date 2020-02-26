@@ -49,6 +49,7 @@ class ReviewContainer extends Component {
         })
         .then(r => r.json())
         .then(review => {
+            console.log(review)
             let newReviewArr = this.state.reviews.filter(review => review.id !== reviewId)
             this.setState({
                 reviews: newReviewArr

@@ -10,7 +10,7 @@ import { decreaseItemQuantity } from '../Actions/itemsActions'
 import { Button } from 'semantic-ui-react'
 
 const ItemShowContainer = (props) => {
-            
+        
         const addToCart = () =>{
 
             let item_id = parseInt(props.match.params.id)
