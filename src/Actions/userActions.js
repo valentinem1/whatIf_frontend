@@ -13,7 +13,6 @@ export const userPersist = (persistedUser) => {
 }
 
 export const addToCart = (cartItem) => {
-    // console.log(cartItem)
     return {
         type: "ADD_TO_CART", 
         cartItem

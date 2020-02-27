@@ -18,7 +18,7 @@ const ItemCard = (props) => {
                 <Card.Content>
                     {/* <Header as='h4'>{props.item.title.slice(0, 35)}{props.item.title.length > 30 ? "..." : null }</Header> */}
                 <Header>{itemTitle()}</Header>
-                    <Rating icon='star' defaultRating={!props.item.reviews.length ? null : props.item.reviews.length} maxRating={5} disabled/>
+                    <Rating icon='star' defaultRating={0} maxRating={5} disabled/>
                 </Card.Content>
                 <Card.Content extra>
                     <p>Price:</p>

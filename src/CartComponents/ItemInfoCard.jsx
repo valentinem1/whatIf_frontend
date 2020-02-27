@@ -17,29 +17,30 @@ const ItemInfoCard = (props) => {
         })
         .then(r => r.json())
         .then(deletedItem => {
-            // console.log(deletedItem)
             props.increaseItemQuantity(deletedItem.item)
             props.removeFromCart(deletedItem)
         })
     }
-    // debugger
-    return (
-        <Segment>
-            <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
-                <br/>
-                <p>{props.item.title}</p>
-                <p>Price: ${props.item.price}</p>
-                {/* <p>Quantity: {props.userCart.map(cartItem => cartItem.quantity)}</p> */}
-                <p>Quantity: {props.cart_joiner_quantity}</p>
-                <Button size='small' onClick={removeItemFromCart}>Remove</Button>
-        </Segment>
 
-    );
+    if(props.item){
+        return (
+            <Segment>
+                <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
+                    <br/>
+                    <p>{props.item.title}</p>
+                    <p>Price: ${props.item.price}</p>
+                    {/* <p>Quantity: {props.userCart.map(cartItem => cartItem.quantity)}</p> */}
+                    <p>Quantity: {props.cart_joiner_quantity}</p>
+                    <Button size='small' onClick={removeItemFromCart}>Remove</Button>
+            </Segment>
+    
+        );
+    }
+    return null
 
 };
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return{
         userCart: state.user.cart
     }

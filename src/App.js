@@ -24,6 +24,7 @@ class App extends Component {
     fetch('http://localhost:4000/items')
     .then(r => r.json())
     .then(itemsData => {
+      // console.log(itemsData)
       this.props.fetchItems(itemsData)
     })
 

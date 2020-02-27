@@ -27,7 +27,7 @@ const ItemShowContainer = (props) => {
             })
             .then(r => r.json())
             .then(cartItem => {
-                console.log(cartItem)
+                // console.log(cartItem)
                 props.addToCart(cartItem)
                 props.decreaseItemQuantity(cartItem.item)
             })

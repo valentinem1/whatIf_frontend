@@ -8,7 +8,6 @@ const CheckoutCard = (props) => {
     const cartTotalPrice = () => {
         if(props.userCart && props.userCart.length > 0){
             let price = props.userCart.map(cartItem => cartItem.item.price)
-            // console.log(price)
             let totalPrice = price.reduce((total, num) => total + num)
             return totalPrice
         }else{
@@ -25,6 +24,18 @@ const CheckoutCard = (props) => {
         }
     }
 
+    const createOrder = () => {
+        fetch('http://localhost:4000/order_joiners', {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                    "Authorization": `bearer ${localStorage.token}`
+                }
+            })
+            .then(r => r.json())
+            .then(console.log)
+    }
+
     return (
 
         <Segment>
@@ -35,7 +46,7 @@ const CheckoutCard = (props) => {
             <br/>
             Total({cartTotalItem()} item)
             <br/>
-            <Button>Checkout</Button>
+            <Button onClick={createOrder}>Checkout</Button>
         </Segment>
         );
 

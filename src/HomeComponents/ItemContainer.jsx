@@ -8,10 +8,10 @@ import { Card } from 'semantic-ui-react'
 
 const ItemContainer = (props) => {
 
-    return (
+    return(
 
         <Card.Group itemsPerRow={6}>
-            {props.items.map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
+            {!props.items ? null : props.items.map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
         </Card.Group>
 
     );

@@ -10,9 +10,7 @@ const itemReducer = (state=initialState, action) => {
             return action.items
 
         case "DECREASE_ITEM_QUANTITY":
-            // debugger
             let updatedItem = state.map(item => item.id === action.item.id ? action.item : item)
-            // console.log(updatedItem)
             return updatedItem
 
         case "INCREASE_ITEM_QUANTITY":

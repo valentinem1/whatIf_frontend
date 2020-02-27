@@ -14,7 +14,7 @@ export const decreaseItemQuantity = (item) => {
 }
 
 export const increaseItemQuantity = (item) => {
-    console.log(item)
+    // console.log(item)
     return{
         type: "INCREASE_ITEM_QUANTITY",
         item
