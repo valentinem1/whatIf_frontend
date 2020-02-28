@@ -25,3 +25,10 @@ export const removeFromCart = (cartItem) => {
         cartItem
     }
 }
+
+export const createOrder = (newOrder) => {
+    return{
+        type: "CREATE_ORDER",
+        newOrder
+    }
+}

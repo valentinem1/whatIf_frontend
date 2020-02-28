@@ -7,12 +7,10 @@ import { Switch, Route } from 'react-router'
 import HeaderContainer from './HeaderContainer'
 import HomeContainer from './HomeComponents/HomeContainer'
 import LoginSignupForm from './LoginSignupForm'
-
 import ProfileContainer from './ProfileComponents/ProfileContainer'
-
 import ItemShowContainer from './ItemComponents/ItemShowContainer'
-
 import CartContainer from './CartComponents/CartContainer'
+import OrderContainer from './OrderComponents/OrderContainer'
 
 import { connect } from 'react-redux'
 import { fetchItems } from './Actions/itemsActions'
@@ -24,7 +22,6 @@ class App extends Component {
     fetch('http://localhost:4000/items')
     .then(r => r.json())
     .then(itemsData => {
-      // console.log(itemsData)
       this.props.fetchItems(itemsData)
     })
 
@@ -57,6 +54,7 @@ class App extends Component {
           <Route exact path='/login' component={ LoginSignupForm }/>
           <Route exact path='/signup' component={ LoginSignupForm }/>
           <Route exact path="/cart" component={ CartContainer } />
+          <Route exact path="/orders" component={ OrderContainer } />
           <Route path='/:id' component={ ItemShowContainer } />
         </Switch>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-
+import { createOrder } from '../Actions/userActions'
 import { Segment, Button } from 'semantic-ui-react'
 
 const CheckoutCard = (props) => {
@@ -33,9 +33,12 @@ const CheckoutCard = (props) => {
                 }
             })
             .then(r => r.json())
-            .then(console.log)
+            .then(newOrder => {
+                console.log(newOrder)
+                props.createOrder(newOrder)
+            })
     }
-
+    // console.log(props)
     return (
 
         <Segment>
@@ -58,4 +61,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(CheckoutCard);
+export default connect(mapStateToProps, { createOrder })(CheckoutCard);

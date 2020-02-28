@@ -13,17 +13,36 @@ const userReducer = (state=initialState, action) => {
             return action.persistedUser
 
         case "ADD_TO_CART":
-            
             return {...state, cart: [...state.cart, action.cartItem]}
             
         case "REMOVE_FROM_CART":
             let newArr = state.cart.filter(item => item.id !== action.cartItem.cart_joiner.id)
             return {...state, cart: newArr}
 
+        case "CREATE_ORDER":
+            console.group(action.newOrder)
+            return {...state, cart: [], orders: [...state.orders, action.newOrder]}
+
         default:
             return state;
     }
 }
+
+export default userReducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // let found_added_item = !state.cart ? null : state.cart.map(cartItem => cartItem.item.id).includes(action.cartItem.item.id)
             // if(found_added_item){
@@ -39,5 +58,3 @@ const userReducer = (state=initialState, action) => {
             //             return {...state, cart: newArr}
                 
             // }else{
-
-export default userReducer;

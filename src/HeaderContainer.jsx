@@ -26,12 +26,14 @@ class HeaderContainer extends Component {
                             <Link to="/profile">Profile</Link>
                         </Menu.Item>
                         <Menu.Item>
+                            <Link to="/orders">Orders</Link>
+                        </Menu.Item>
+                        <Menu.Item>
                             <Link to="/cart"><Icon name="shopping cart" size="large"/></Link>
                         </Menu.Item>
                         <Menu.Item>
                             <Link onClick={this.logOutUser} to="/"><Icon name="sign-out" size="large"/></Link>
                         </Menu.Item>
-                        
                         </Menu>
                         </Header> : 
                         <Header className="signup-menu-bar">
