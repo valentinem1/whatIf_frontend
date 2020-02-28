@@ -1,5 +1,5 @@
 const initialState = {
-
+    // total_price: 0
 }
 
 const userReducer = (state=initialState, action) => {
@@ -20,8 +20,11 @@ const userReducer = (state=initialState, action) => {
             return {...state, cart: newArr}
 
         case "CREATE_ORDER":
-            console.group(action.newOrder)
+            // console.group(action.newOrder)
             return {...state, cart: [], orders: [...state.orders, action.newOrder]}
+
+        // case "TOTAL_PRICE":
+        //     return action.totalPrice
 
         default:
             return state;

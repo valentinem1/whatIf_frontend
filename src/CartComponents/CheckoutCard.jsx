@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { createOrder } from '../Actions/userActions'
-import { Segment, Button } from 'semantic-ui-react'
+import { createOrder, totalPrice } from '../Actions/userActions'
+import { Segment } from 'semantic-ui-react'
+import StripeCheckout from 'react-stripe-checkout';
 
 const CheckoutCard = (props) => {
     
@@ -9,6 +10,7 @@ const CheckoutCard = (props) => {
         if(props.userCart && props.userCart.length > 0){
             let price = props.userCart.map(cartItem => cartItem.item.price)
             let totalPrice = price.reduce((total, num) => total + num)
+            props.totalPrice(totalPrice)
             return totalPrice
         }else{
             return null
@@ -24,8 +26,29 @@ const CheckoutCard = (props) => {
         }
     }
 
-    const createOrder = () => {
-        fetch('http://localhost:4000/order_joiners', {
+    const totalWithTax = () => {
+       return cartTotalPrice() + 10
+    }
+
+    const onToken = (token) => {
+        
+            const charge = {
+                token: token.id
+            };
+    
+            const config = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ charge: charge, price: totalWithTax * 100 })
+            };
+
+            fetch('http://localhost:4000/charges', config)
+            .then(res => res.json())
+            .then(console.log)
+
+            fetch('http://localhost:4000/order_joiners', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -38,7 +61,7 @@ const CheckoutCard = (props) => {
                 props.createOrder(newOrder)
             })
     }
-    // console.log(props)
+
     return (
 
         <Segment>
@@ -49,10 +72,14 @@ const CheckoutCard = (props) => {
             <br/>
             Total({cartTotalItem()} item)
             <br/>
-            <Button onClick={createOrder}>Checkout</Button>
+            <StripeCheckout 
+                token={onToken}
+                stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
+            /> 
+            {/* <Button onClick={createOrder}>Checkout</Button> */}
         </Segment>
-        );
 
+    );
 };
 
 const mapStateToProps = (state) => {
@@ -61,4 +88,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { createOrder })(CheckoutCard);
+export default connect(mapStateToProps, { createOrder, totalPrice })(CheckoutCard);

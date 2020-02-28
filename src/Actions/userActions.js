@@ -32,3 +32,10 @@ export const createOrder = (newOrder) => {
         newOrder
     }
 }
+
+export const totalPrice = (totalPrice) => {
+    return{
+        type: "TOTAL_PRICE",
+        totalPrice
+    }
+}
