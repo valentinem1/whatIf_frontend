@@ -10,12 +10,12 @@ const CheckoutCard = (props) => {
         if(props.userCart && props.userCart.length > 0){
             let price = props.userCart.map(cartItem => cartItem.item.price)
             let totalPrice = price.reduce((total, num) => total + num)
-            props.totalPrice(totalPrice)
             return totalPrice
-        }else{
-            return null
         }
     }
+
+    let total = cartTotalPrice()
+    let totalWithShipping = total + 10
 
     const cartTotalItem = () => {
         if(props.userCart){
@@ -24,10 +24,6 @@ const CheckoutCard = (props) => {
         }else{
             return null
         }
-    }
-
-    const totalWithTax = () => {
-       return cartTotalPrice() + 10
     }
 
     const onToken = (token) => {
@@ -41,8 +37,12 @@ const CheckoutCard = (props) => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ charge: charge, price: totalWithTax * 100 })
+                body: JSON.stringify({ 
+                    charge: charge, 
+                    price: totalWithShipping * 100
+                })
             };
+
 
             fetch('http://localhost:4000/charges', config)
             .then(res => res.json())
@@ -61,29 +61,29 @@ const CheckoutCard = (props) => {
                 props.createOrder(newOrder)
             })
     }
-
+        console.log(props.user)
     return (
-
         <Segment>
             Item(s) total:
-            ${cartTotalPrice()}
+            ${total ? total : total = 0}
             <br/>
             Shipping: $10
             <br/>
             Total({cartTotalItem()} item)
             <br/>
+            Total: ${totalWithShipping ? totalWithShipping : totalWithShipping = 0}
+            <br/>
             <StripeCheckout 
                 token={onToken}
                 stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-            /> 
-            {/* <Button onClick={createOrder}>Checkout</Button> */}
+            />
         </Segment>
-
     );
 };
 
 const mapStateToProps = (state) => {
     return{
+        user: state.user,
         userCart: state.user.cart
     }
 }
