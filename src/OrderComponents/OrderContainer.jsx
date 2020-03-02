@@ -8,7 +8,7 @@ const OrderContainer = (props) => {
         let orders = props.orders.map(order => <OrderCard order={order} pathname={props.match.path}/>)
         return (
             <div>
-                 Orders:
+                 <h1 className="order-header">Purchased:</h1>
                 {orders}
             </div>
         );

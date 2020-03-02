@@ -25,16 +25,17 @@ const ItemInfoCard = (props) => {
     if(props.item){
         return (
             <>
-            {props.pathname === "/orders" ? <Container>
+            {props.pathname === "/orders" ? 
+            <Container className="order-card-container">
             <Segment>
                 <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
                     <br/>
                     <p>{props.item.title}</p>
                     <p>Price: ${props.item.price}</p>
-                    <p>Quantity: {props.cart_joiner_quantity}</p>
-                    {/* {props.pathname === "/orders" ? null : <Button size='small' onClick={removeItemFromCart}>Remove</Button>} */}
             </Segment>
-            </Container> : <Segment>
+            </Container> 
+                : 
+            <Segment className="item-order-card">
                 <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
                     <br/>
                     <p>{props.item.title}</p>

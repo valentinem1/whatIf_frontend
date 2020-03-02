@@ -18,8 +18,8 @@ class HeaderContainer extends Component {
                 <Header><Link to="/"><i className="cib-etsy">Watif</i></Link></Header>
                 
                         {localStorage.token ? 
-                        <Header>
-                        <Menu className="logged-in-menu-bar">
+                        <Header className="logged-in-menu-bar">
+                        <Menu >
                         <Menu.Item>
                             <Link to="/profile">Profile</Link>
                         </Menu.Item>
