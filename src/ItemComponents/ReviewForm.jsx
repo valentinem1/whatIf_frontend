@@ -27,9 +27,7 @@ class ReviewForm extends Component {
     }
 
     render() {
-        // console.log(this.props.matchProps.params)
         return (
-            
             <Form onSubmit={this.handleSubmit}>
                 <Form.TextArea
                     label='Review'
@@ -40,7 +38,6 @@ class ReviewForm extends Component {
                 />
                 <Rating
                     name="rating"
-                    // value={this.state.rating}
                     onRate={this.handleChange}
                     icon="star" 
                     maxRating={5} 

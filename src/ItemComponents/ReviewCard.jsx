@@ -5,7 +5,6 @@ const ReviewCard = (props) => {
 
     // console.log(props)
     const handleDelete = (event) => {
-        // console.log(props.review.id)
         props.deleteReview(props.review.id)
     }
 

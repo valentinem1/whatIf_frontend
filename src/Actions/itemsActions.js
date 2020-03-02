@@ -1,6 +1,6 @@
 export const fetchItems = (items) => {
     return {
-        type: "FETCH ITEMS", 
+        type: "FETCH_ITEMS", 
         items
     }
 }

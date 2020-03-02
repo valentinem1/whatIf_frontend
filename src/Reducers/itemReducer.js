@@ -6,7 +6,7 @@ const itemReducer = (state=initialState, action) => {
 
     switch(action.type){
 
-        case "FETCH ITEMS":
+        case "FETCH_ITEMS":
             return action.items
 
         case "DECREASE_ITEM_QUANTITY":

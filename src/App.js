@@ -15,6 +15,7 @@ import OrderContainer from './OrderComponents/OrderContainer'
 import { connect } from 'react-redux'
 import { fetchItems } from './Actions/itemsActions'
 import { userPersist } from './Actions/userActions'
+import { fetchReviews } from './Actions/reviewActions'
 
 class App extends Component {
 
@@ -39,6 +40,13 @@ class App extends Component {
         }
       })
     }
+
+      // fetch('http://localhost:4000/reviews')
+      // .then(r => r.json())
+      // .then(reviewsArr => {
+      //     console.log(reviewsArr)
+      //     this.props.fetchReviews(reviewsArr)
+      // })
   }
   
   render() {
@@ -66,4 +74,4 @@ class App extends Component {
 {/* <Route exact path='/login' component={ LoginSignupForm }/>
 <Route exact path='/signup' component={ LoginSignupForm }/> */}
 
-export default connect(null, { fetchItems, userPersist })(withRouter(App));
+export default connect(null, { fetchItems, userPersist, fetchReviews })(withRouter(App));

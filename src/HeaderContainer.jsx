@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
-import { Segment, Header, Menu, Icon, Modal, Button } from 'semantic-ui-react'
+import { Segment, Header, Menu, Icon, Modal } from 'semantic-ui-react'
 import LoginSignupForm from './LoginSignupForm'
 
 class HeaderContainer extends Component {
@@ -11,11 +11,9 @@ class HeaderContainer extends Component {
     }
 
     render() {
-        // console.log(this.props.historyProps)
         return (
 
             <div>
-
             <Segment className="logo">
                 <Header><Link to="/"><i className="cib-etsy">Watif</i></Link></Header>
                 

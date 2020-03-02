@@ -1,38 +1,55 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Image, Header, Container, Icon, Label } from 'semantic-ui-react'
+import { Image, Header, Container, Icon, Label, Button } from 'semantic-ui-react'
 
 import { connect } from 'react-redux'
 
-class InfoContainer extends Component {
+const InfoContainer = (props) => {
     
-    render() {
-        const item_id = parseInt(this.props.matchProps.params.id)
-        let item = this.props.items.find(item => item.id === item_id)
+        const item_id = parseInt(props.matchProps.params.id)
+        let item = props.items.find(item => item.id === item_id)
 
-        // console.log(item)
-        if(item){
-
-        return (
-            <div>
-                <Container>
-                    <Header>{item.title}</Header>
-                    <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
-                    <p>{item.description}</p>
-                    <Label>
-                        <Icon>Quantity: {item.quantity}</Icon>
-                    </Label>
-                    <Label>
-                        <Icon>Price: ${item.price}</Icon>
-                    </Label>
-                </Container>
-            </div>
-        );
+        const addToCart = () =>{
+            // let item_id = parseInt(props.matchProps.params.id)
+    
+            fetch('http://localhost:4000/cart_joiners', {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                    "Authorization": `bearer ${localStorage.token}`
+                },
+                body: JSON.stringify({
+                    item_id
+                })
+            })
+            .then(r => r.json())
+            .then(cartItem => {
+                // console.log(cartItem)
+                props.addToCart(cartItem)
+                props.decreaseItemQuantity(cartItem.item)
+            })
         }
-        return null
+        // console.log(props)
+        if(item){
+            return (
+                <div>
+                    <Container>
+                        <Header>{item.title}</Header>
+                        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
+                        <p>{item.description}</p>
+                        <Label>
+                            <Icon>Quantity: {item.quantity}</Icon>
+                        </Label>
+                        <Label>
+                            <Icon>Price: ${item.price}</Icon>
+                        </Label>
+                        <br/>
+                        {item.quantity < 1 ? <Button disabled className="add-to-cart-btn" onClick={addToCart}>Sold out</Button> : <Button className="add-to-cart-btn" onClick={addToCart}>Add to cart</Button>}
+                    </Container>
+                </div>
+            )
+        }return null
     }
-    
-}
 
 const mapStateToProps = (state) => {
     return{
