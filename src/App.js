@@ -6,7 +6,7 @@ import { Switch, Route } from 'react-router'
 
 import HeaderContainer from './HeaderContainer'
 import HomeContainer from './HomeComponents/HomeContainer'
-import LoginSignupForm from './LoginSignupForm'
+// import LoginSignupForm from './LoginSignupForm'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ItemShowContainer from './ItemComponents/ItemShowContainer'
 import CartContainer from './CartComponents/CartContainer'
@@ -34,6 +34,7 @@ class App extends Component {
       .then(r => r.json())
       .then(userData => {
         if(userData.token){
+          // console.log(userData.user)
           this.props.userPersist(userData.user)
         }
       })
@@ -51,8 +52,6 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={ HomeContainer } />
           <Route exact path="/profile" component={ ProfileContainer } />
-          <Route exact path='/login' component={ LoginSignupForm }/>
-          <Route exact path='/signup' component={ LoginSignupForm }/>
           <Route exact path="/cart" component={ CartContainer } />
           <Route exact path="/orders" component={ OrderContainer } />
           <Route path='/:id' component={ ItemShowContainer } />
@@ -64,5 +63,7 @@ class App extends Component {
   }
 }
 
+{/* <Route exact path='/login' component={ LoginSignupForm }/>
+<Route exact path='/signup' component={ LoginSignupForm }/> */}
 
 export default connect(null, { fetchItems, userPersist })(withRouter(App));

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
-import { Segment, Header, Menu, Icon } from 'semantic-ui-react'
-
+import { Segment, Header, Menu, Icon, Modal, Button } from 'semantic-ui-react'
+import LoginSignupForm from './LoginSignupForm'
 
 class HeaderContainer extends Component {
 
@@ -11,7 +11,7 @@ class HeaderContainer extends Component {
     }
 
     render() {
-        // console.log(this.props)
+        // console.log(this.props.historyProps)
         return (
 
             <div>
@@ -39,10 +39,9 @@ class HeaderContainer extends Component {
                         <Header className="signup-menu-bar">
                         <Menu>
                         <Menu.Item>
-                            <Link to="/signup">SignUp</Link>
-                        </Menu.Item>
-                        <Menu.Item>
-                            <Link to="/login">Login</Link>
+                        <Modal trigger={<p className="sign-in">Sign in</p>}>
+                            <LoginSignupForm history={this.props.historyProps.history}/>
+                        </Modal>
                         </Menu.Item>
                         </Menu>
                         </Header>

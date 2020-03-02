@@ -6,8 +6,8 @@ import { Header, Image } from 'semantic-ui-react'
 
 const ProfileCard = (props) => {
     // console.log(props)
+    
     return (
-
         <Header as='h2'>
             <Image circular src={props.user.picture} /> {props.user.username}
         </Header>
@@ -16,6 +16,7 @@ const ProfileCard = (props) => {
 };
 
 const mapStateToProps = (state) => {
+    console.log(state.user)
     return {
         user: state.user
     }

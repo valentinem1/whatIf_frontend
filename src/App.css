@@ -37,9 +37,21 @@
 .logged-in-menu-bar{
   width: 19.7vw !important;
   float: right;
+  /* margin-left: 70vw !important; */
 }
 
 .signup-menu-bar{
   width: 9.8vw !important;
   float: right;
+}
+
+.sign-in{
+  color: #000000;
+  font-weight: bold;
+}
+
+.signup-login-route-button{
+  text-decoration: underline;
+  color: dodgerblue;
+  font-weight: bold;
 }

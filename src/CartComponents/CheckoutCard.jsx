@@ -43,7 +43,6 @@ const CheckoutCard = (props) => {
                 })
             };
 
-
             fetch('http://localhost:4000/charges', config)
             .then(res => res.json())
             .then(console.log)
@@ -57,28 +56,38 @@ const CheckoutCard = (props) => {
             })
             .then(r => r.json())
             .then(newOrder => {
-                console.log(newOrder)
                 props.createOrder(newOrder)
             })
     }
-        console.log(props.user)
-    return (
-        <Segment>
-            Item(s) total:
-            ${total ? total : total = 0}
-            <br/>
-            Shipping: $10
-            <br/>
-            Total({cartTotalItem()} item)
-            <br/>
-            Total: ${totalWithShipping ? totalWithShipping : totalWithShipping = 0}
-            <br/>
-            <StripeCheckout 
+
+    if(props.userCart){
+        return (
+    
+            <Segment>
+                Item(s) total:
+                ${total ? total : total = 0}
+                <br/>
+                Shipping: $10
+                <br/>
+                Total({cartTotalItem()} item)
+                <br/>
+                Total: ${totalWithShipping ? totalWithShipping : totalWithShipping = 0}
+                <br/>
+                {props.userCart.length === 0 ?
+                <StripeCheckout disabled
+                    token={onToken}
+                    stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
+                    billingAddress
+                    shippingAddress
+                /> : <StripeCheckout
                 token={onToken}
                 stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-            />
-        </Segment>
-    );
+                billingAddress
+                shippingAddress
+            />}
+            </Segment>
+        );
+    } return null
 };
 
 const mapStateToProps = (state) => {
