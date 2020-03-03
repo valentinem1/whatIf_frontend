@@ -1,9 +1,7 @@
 import React from 'react';
-
 import ItemCard from './ItemCard'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
-
 import { Card } from 'semantic-ui-react'
 
 const ItemContainer = (props) => {

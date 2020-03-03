@@ -12,24 +12,26 @@ const ItemCard = (props) => {
         }
     }
 
-        let ratingArr = props.item.reviews.map(review => review.rating)
-        let sumRatingArr = ratingArr.length === 0 ? 0 : ratingArr.reduce((total, num) => total + num)
-        let averageRating = sumRatingArr === 0 ? 0 : sumRatingArr / ratingArr.length
 
-    // debugger
-    return(
-            <Card className="item-card">
-                <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image" wrapped ui={false}/>
-                <Card.Content>
-                <Header>{itemTitle()}</Header>
-                    <Rating icon='star' defaultRating={averageRating} maxRating={5} disabled/>
-                </Card.Content>
-                <Card.Content extra>
-                    <p>Price:</p>
-                    <b>${props.item.price}</b>
-                </Card.Content>
-            </Card>
-    );
+    if(props.item.reviews){
+            let ratingArr = props.item.reviews.map(review => review.rating)
+            let sumRatingArr = ratingArr.length === 0 ? 0 : ratingArr.reduce((total, num) => total + num)
+            let averageRating = sumRatingArr === 0 ? 0 : sumRatingArr / ratingArr.length
+
+        return(
+                <Card className="item-card">
+                    <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image" wrapped ui={false}/>
+                    <Card.Content>
+                    <Header>{itemTitle()}</Header>
+                        <Rating icon='star' defaultRating={averageRating} maxRating={5} disabled/>
+                    </Card.Content>
+                    <Card.Content extra>
+                        <p>Price:</p>
+                        <b>${props.item.price}</b>
+                    </Card.Content>
+                </Card>
+        );
+    }return null
 };
 
 export default ItemCard;

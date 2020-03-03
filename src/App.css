@@ -8,30 +8,14 @@
 }
 
 .logo{
-  background-color: darkorange !important;
-  font-size: 3.5vw !important;
-  margin-bottom: 4vh !important;
+  background-color: #ffa500 !important;
+  font-size: 3vw !important;
+  margin-bottom: 7vh !important;
 }
 
 .ui.six.cards{
   margin-top: 7vh;
   margin-left: 4vw;
-}
-
-.add-to-cart-btn{
-  background-color: #000000 !important;
-  color: #f0f0f0 !important;
-}
-
-.add-to-cart-btn:hover{
-  background-color: #222222 !important;
-  color: #f0f0f0 !important;
-}
-
-.item-card{
-  height: 50vh !important;
-  margin-left: 2vw !important;
-  margin-bottom: 3vh !important;
 }
 
 .logged-in-menu-bar{
@@ -58,16 +42,175 @@
   font-weight: bold;
 }
 
-.order-header{
-  text-align: center;
+/* item show page css */
+.item-info-card{
+  margin-bottom: 10vh;
 }
 
-.purchased-time{
-  margin-left: 25vw;
+.average-rating-on-item{
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-size: 1vw;
+  color: #595959;
+  height: 1vh;
+}
+
+.item-image-description-block{
+  display: flex;
+  align-items: center;
+}
+
+.item-image{
+  width: 350vw !important;
+  height: 100vh !important;
+  margin-left: 1vw !important;
+  border-radius: 0.5vw !important;
+  margin-top: -7vh !important;
+}
+
+.item-title-header{
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif !important;
+}
+
+.item-info{
+  margin-top: 3vh !important;
+  margin-left: 8vw;
+  font-size: 1.4vw;
+  font-family: "Guardian-EgypTT",serif;
+}
+
+.item-description{
+  margin-top: 5vh !important;
+}
+
+.item-price{
+  margin-top: 3vh;
+  font-size: 2.3vw;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-weight: bold;
+}
+
+.add-to-cart-btn{
+  background-color: #000000 !important;
+  color: #f0f0f0 !important;
+  margin-top: 4vh !important;
+  margin-bottom: 4vh !important;
+  border-radius: 2vw !important;
+  width: 23vw !important;
+  padding: 1vw !important;
+}
+
+.add-to-cart-btn:hover{
+  background-color: #222222 !important;
+  color: #f0f0f0 !important;
+}
+
+.item-info-review-separator{
+  width: 90vw;
+}
+
+.item-card{
+  height: 50vh !important;
+  margin-left: 2vw !important;
+  margin-bottom: 3vh !important;
 }
 
 .order-card-container{
   margin-bottom: 3vh !important;
-  width: 50vw !important;
+  width: 40vw !important;
 }
 
+.review-header{
+  margin-top: 4vh !important;
+  margin-bottom: 1.5vh !important;
+  text-decoration: underline;
+}
+
+.review-delete-button{
+  font-size: 0.8vw;
+  padding-left: 1vw;
+  text-decoration: underline;
+  display: inline;
+  word-wrap: break-word;
+}
+
+.review-delete-button:hover{
+  cursor: pointer;
+  color: #595959;
+}
+
+.review-post-time{
+  font-size: 0.7vw;
+  color: #595959;
+}
+
+.review-username{
+  font-size: 1.2vw;
+  margin-bottom: 0vh;
+  color: #595959;
+}
+
+.review-comment{
+  font-size: 2.5vh;
+  margin-bottom: 3vh !important;
+  margin-left: 1vw !important;
+}
+
+.rating-stars-card{
+  margin-left: 1vw !important;
+}
+
+.create-review-button{
+  margin-top: 3vh !important;
+  margin-bottom: 20vh !important;
+}
+
+/* orders container css */
+.order-header{
+  text-align: center;
+  margin-bottom: 3vw;
+}
+
+.order-cart-item-container{
+  display: flex;
+  align-items: center;
+}
+
+.purchased-time{
+  margin-left: 30vw;
+  margin-top: 5vh !important;
+}
+
+.order-item-info{
+  margin-left: 3vw;
+  font-size: 1.1vw;
+  font-family: "Guardian-EgypTT",serif;
+}
+
+.order-segment{
+  height: 20vh !important;
+}
+
+.order-item-image{
+  height: 12vh;
+  border: 1px solid #d2d2d2;
+  border-radius: 0.4vh;
+  padding: 0.4vh;
+}
+
+.order-item-title{
+  text-decoration: none !important;
+  color: #222222 !important;
+  font-size: 1.1vw !important;
+}
+
+.order-item-title:hover{
+  cursor: pointer !important;
+  text-decoration: underline !important;
+}
+
+.order-item-price{
+  margin-top: 3vh;
+  font-size: 1vw;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  color: #222222;
+}

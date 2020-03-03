@@ -30,7 +30,7 @@ class ReviewForm extends Component {
         return (
             <Form onSubmit={this.handleSubmit}>
                 <Form.TextArea
-                    label='Review'
+                    label='Leave a review here'
                     placeholder="Write your thoughts"
                     name="comment"
                     value={this.state.comment}
@@ -44,7 +44,7 @@ class ReviewForm extends Component {
                     clearable
                 />
                 <br/>
-                <Button type='submit'>Submit</Button>
+                <Button className="create-review-button" type='submit'>Submit</Button>
             </Form>
         )
     }

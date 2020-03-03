@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { Segment, Image, Button, Container } from 'semantic-ui-react'
-
 import { connect } from 'react-redux'
-
+import { Link } from "react-router-dom"
 import { removeFromCart } from '../Actions/userActions'
 import { increaseItemQuantity } from '../Actions/itemsActions'
 
@@ -27,11 +25,15 @@ const ItemInfoCard = (props) => {
             <>
             {props.pathname === "/orders" ? 
             <Container className="order-card-container">
-            <Segment>
-                <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
-                    <br/>
-                    <p>{props.item.title}</p>
-                    <p>Price: ${props.item.price}</p>
+            <Segment className="order-segment">
+                <div className="order-cart-item-container">
+                <Image className="order-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
+                    <div className="order-item-info">
+                        <Link to={`/${props.item.id}`}><h3 className="order-item-title">{props.item.title}</h3></Link>
+                        <p className="order-item-price">Price: ${props.item.price}</p>
+                    </div>
+                </div>
+                
             </Segment>
             </Container> 
                 : 

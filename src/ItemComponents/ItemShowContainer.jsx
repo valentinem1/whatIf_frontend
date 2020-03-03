@@ -3,19 +3,16 @@ import React from 'react';
 import InfoContainer from './InfoContainer'
 import ReviewContainer from './ReviewContainer'
 
-import { connect } from 'react-redux'
-import { addToCart } from '../Actions/userActions'
-import { decreaseItemQuantity } from '../Actions/itemsActions'
-
 const ItemShowContainer = (props) => {
-        
+        // console.log(props.match)
     return (
         <div>
             <InfoContainer matchProps={props.match}/>
+            <hr className="item-info-review-separator"/>
             <ReviewContainer matchProps={props.match}/>
         </div>
 
     );
 };
 
-export default connect(null, { addToCart, decreaseItemQuantity })(ItemShowContainer);
+export default ItemShowContainer;
