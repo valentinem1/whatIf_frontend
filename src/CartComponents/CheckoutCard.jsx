@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { createOrder, totalPrice } from '../Actions/userActions'
-import { Segment } from 'semantic-ui-react'
+import { Segment, Button } from 'semantic-ui-react'
 import StripeCheckout from 'react-stripe-checkout';
 
 const CheckoutCard = (props) => {
@@ -15,7 +15,7 @@ const CheckoutCard = (props) => {
     }
 
     let total = cartTotalPrice()
-    let totalWithShipping = total + 10
+    let totalWithShipping = total + (total >= 20 ? 10 : 5)
 
     const cartTotalItem = () => {
         if(props.userCart){
@@ -64,27 +64,30 @@ const CheckoutCard = (props) => {
         return (
     
             <Segment>
-                Item(s) total:
-                ${total ? total : total = 0}
-                <br/>
-                Shipping: $10
-                <br/>
-                Total({cartTotalItem()} item)
-                <br/>
-                Total: ${totalWithShipping ? totalWithShipping : totalWithShipping = 0}
-                <br/>
-                {props.userCart.length === 0 ?
-                <StripeCheckout disabled
-                    token={onToken}
-                    stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-                    billingAddress
-                    shippingAddress
-                /> : <StripeCheckout
-                token={onToken}
-                stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-                billingAddress
-                shippingAddress
-            />}
+                <div className="checkout-info">
+                    <div className="item-total-price">
+                        <p className="items-total-title">Item(s) total:</p>
+                        <p className="items-cart-total">${total ? total : total = 0}</p>
+                    </div>
+                    <div className="item-total-price">
+                        <p className="items-shipping-title">Shipping: </p>
+                        <p className="items-cart-shipping">{total >= 20 ? "$10" : "$5"}</p>
+                    </div>
+                    <hr/>
+                    <div className="item-total-price">
+                        <p className="total-price-title">Total({cartTotalItem()} item)</p>
+                        <p className="cart-total-price">${totalWithShipping ? totalWithShipping : totalWithShipping = 0}</p>
+                    </div>
+                    <StripeCheckout 
+                        disabled={props.userCart.length === 0 ? true : false}
+                        token={onToken}
+                        stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
+                        billingAddress
+                        shippingAddress
+                    >
+                    <Button className="checkout-btn">Checkout</Button>
+                    </StripeCheckout>
+                </div>
             </Segment>
         );
     } return null

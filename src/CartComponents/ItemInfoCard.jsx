@@ -27,7 +27,7 @@ const ItemInfoCard = (props) => {
             <Container className="order-card-container">
             <Segment className="order-segment">
                 <div className="order-cart-item-container">
-                <Image className="order-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
+                    <Image className="order-item-image" src={props.item.image} alt="default image"/>
                     <div className="order-item-info">
                         <Link to={`/${props.item.id}`}><h3 className="order-item-title">{props.item.title}</h3></Link>
                         <p className="order-item-price">Price: ${props.item.price}</p>
@@ -38,16 +38,17 @@ const ItemInfoCard = (props) => {
             </Container> 
                 : 
             <Segment className="item-order-card">
-                <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
-                    <br/>
-                    <p>{props.item.title}</p>
-                    <p>Price: ${props.item.price}</p>
-                    <p>Quantity: {props.cart_joiner_quantity}</p>
-                    <Button size='small' onClick={removeItemFromCart}>Remove</Button>
+                <div className="order-cart-item-container">
+                    <Image className="cart-item-image" src={props.item.image} alt="default image"/>
+                    <div className="cart-item-info">
+                        <Link to={`/${props.item.id}`}><h3 className="order-item-title">{props.item.title}</h3></Link>
+                        <p className="cart-item-price">Price: ${props.item.price}</p>
+                        {/* <p>Quantity: {props.cart_joiner_quantity}</p> */}
+                        <Button className="remove-from-cart-btn" size='small' onClick={removeItemFromCart}>Remove</Button>
+                    </div>
+                </div>
             </Segment>}
             </>
-            
-    
         );
     }
     return null

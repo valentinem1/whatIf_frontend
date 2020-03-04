@@ -37,11 +37,12 @@ class LoginSignupForm extends Component {
                 <>
                 {this.state.display ? 
                     <>
-                    <Modal.Header>Login</Modal.Header>
+                    <Modal.Header className="login-header">Login</Modal.Header>
                     <Modal.Description>
                         <Form.Field>
                             <label>Username</label>
                             <input 
+                                className="login-signup-input-field"
                                 type="text"
                                 placeholder="Username"
                                 name="username"

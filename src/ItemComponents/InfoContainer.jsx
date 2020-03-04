@@ -28,21 +28,36 @@ const InfoContainer = (props) => {
         }
 
     if(props.items.length){
-            let ratingArr = item.reviews.map(review => review.rating)
-            let sumRatingArr = ratingArr.length === 0 ? 0 : ratingArr.reduce((total, num) => total + num)
-            let averageRating = sumRatingArr === 0 ? 0 : sumRatingArr / ratingArr.length
+        const averageRating = () => {
+            if(item.reviews === undefined){
+                return 0
+            }else{
+                let ratingArr = item.reviews.map(review => review.rating)
+                let sumRatingArr = ratingArr.length === 0 ? 0 : ratingArr.reduce((total, num) => total + num)
+                let average = sumRatingArr === 0 ? 0 : sumRatingArr / ratingArr.length
+                return average
+            }
+        }
 
+        const ratingArray = () => {
+            if(item.reviews === undefined){
+                return 0
+            }else{
+                let ratingArr = item.reviews.map(review => review.rating)
+                return ratingArr.length
+            }
+        }
         return (
             <div className="item-info-card">
                 <Container>
                     <div className="item-image-description-block">
-                        <Image className="item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image"/>
+                        <Image className="item-image" src={item.image} alt="default image"/>
                         <div className="item-info">
                             <h1 className="item-title-header">{item.title}</h1>
                             <div className="average-rating-on-item">
-                                <Rating icon='star' defaultRating={averageRating} maxRating={5} disabled/> ({ratingArr.length})
+                                <Rating icon='star' defaultRating={averageRating()} maxRating={5} disabled/> ({ratingArray()})
                             </div>
-                            <p className="item-description">{item.description}</p>
+                            <p className="item-description">{item.description.length > 1000 ? item.description.slice(0, 916) : item.description}</p>
                             <p className="item-price">Price: ${item.price}</p>
                             <p className="item-quantity-left">Quantity: {item.quantity} left</p>
                             <br/>

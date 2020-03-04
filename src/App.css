@@ -1,7 +1,7 @@
-/* .ui.six.card{
-  margin-left: 10vw !important;
-  margin-right: 10vw !important;
-} */
+/* home page css */
+body{
+  background-color: #FAF9F5;
+}
 
 .cib-etsy{
   color: #f0f0f0 !important;
@@ -16,11 +16,28 @@
 .ui.six.cards{
   margin-top: 7vh;
   margin-left: 4vw;
+  margin-bottom: 10vh;
+}
+
+.ui.card>.image>img{
+  height: 35vh !important;
+}
+
+.item-card-price-header{
+  color: #000000;
+  font-size: 1.2vw;
+  margin-top: 1vh !important;
+  margin-bottom: 1vh !important;
+}
+
+.item-card-price{
+  color: #000000;
+  /* padding-bottom: -20vh !important; */
+  margin-bottom: -10vh !important;
 }
 
 .logged-in-menu-bar{
   width: 19.7vw !important;
-  /* float: right; */
   margin-left: 65vw !important;
   margin-bottom: -10vh !important;
   color: #000000 !important;
@@ -36,14 +53,9 @@
   font-weight: bold;
 }
 
-.signup-login-route-button{
-  text-decoration: underline;
-  color: dodgerblue;
-  font-weight: bold;
-}
-
 /* item show page css */
 .item-info-card{
+  margin-top: 6vw;
   margin-bottom: 10vh;
 }
 
@@ -57,22 +69,24 @@
 .item-image-description-block{
   display: flex;
   align-items: center;
+  /* margin-top: 10vh; */
 }
 
 .item-image{
-  width: 350vw !important;
+  width: 40vw !important;
   height: 100vh !important;
-  margin-left: 1vw !important;
+  margin-left: -4vw !important;
   border-radius: 0.5vw !important;
-  margin-top: -7vh !important;
+  /* margin-top: -15vh !important; */
 }
 
 .item-title-header{
+  margin-top: 4vh !important;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif !important;
 }
 
 .item-info{
-  margin-top: 3vh !important;
+  /* margin-top: 3vh !important; */
   margin-left: 8vw;
   font-size: 1.4vw;
   font-family: "Guardian-EgypTT",serif;
@@ -89,10 +103,26 @@
   font-weight: bold;
 }
 
+.item-quantity-left{
+  font-weight: 900;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  border: solid 2px #222222;
+  border-radius: 2vw;
+  width: 23vw;
+  text-align: center;
+  font-size: 1vw;
+  padding: 0.6vw;
+}
+
+.item-quantity-left:hover{
+  /* border: solid 3px #222222; */
+  padding: 0.8vw;
+}
+
 .add-to-cart-btn{
   background-color: #000000 !important;
   color: #f0f0f0 !important;
-  margin-top: 4vh !important;
+  margin-top: -4vh !important;
   margin-bottom: 4vh !important;
   border-radius: 2vw !important;
   width: 23vw !important;
@@ -102,6 +132,7 @@
 .add-to-cart-btn:hover{
   background-color: #222222 !important;
   color: #f0f0f0 !important;
+  border: solid 3px #222222;
 }
 
 .item-info-review-separator{
@@ -109,8 +140,9 @@
 }
 
 .item-card{
-  height: 50vh !important;
+  height: 60vh !important;
   margin-left: 2vw !important;
+  margin-top: 2vh !important;
   margin-bottom: 3vh !important;
 }
 
@@ -213,4 +245,120 @@
   font-size: 1vw;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   color: #222222;
+}
+
+/* login/signup css */
+.login-header{
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+
+.signup-login-route-button{
+  text-decoration: underline;
+  color: dodgerblue;
+  font-weight: bold;
+}
+
+.signup-login-route-button:hover{
+  cursor: pointer;
+  color: #222222;
+}
+
+.login-signup-input-field{
+  width: 50vw !important;
+}
+
+/* cart items css */
+.cart-item-image{
+  width: 11vw;
+  height: 18vh;
+}
+
+.cart-item-info{
+  margin-left: 3vw;
+  font-size: 1.1vw;
+  font-family: "Guardian-EgypTT",serif;
+}
+
+.cart-item-price{
+  margin-top: 3vh;
+  font-size: 1vw;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  color: #222222;
+}
+
+.remove-from-cart-btn{
+  border-radius: 5vw !important;
+  color: #f0f0f0 !important;
+  background-color: #000000 !important;
+}
+
+/* cart checkout css */
+.checkout-container{
+  margin-top: 10vh !important;
+  margin-left: 10vw !important;
+  margin-right: 10vw !important;
+  margin-bottom: 25vh !important;
+}
+
+.checkout-info{
+  text-align: center;
+  margin-bottom: 50vh;
+}
+
+.checkout-btn{
+  margin-top: 10vh !important;
+  background-color: #000000 !important;
+  color: #f0f0f0 !important;
+  width: 12vw !important;
+  border-radius: 5vw !important;
+}
+
+.item-total-price{
+  display: flex;
+  align-items: center;
+}
+
+.items-total-title{
+  margin-left: 1.5vw;
+  margin-top: 1vh !important;
+  font-size: 1vw;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+}
+
+.items-cart-total{
+  margin-left: 23vw;
+  margin-top: -0.2vh;
+  font-size: 1vw;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+}
+
+.items-shipping-title{
+  margin-left: 1.5vw;
+  font-size: 1vw;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+}
+
+.items-cart-shipping{
+  margin-left: 25vw;
+  margin-top: -0.2vh;
+  font-size: 1vw;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+}
+
+.total-price-title{
+  margin-left: 1.5vw;
+  margin-top: 1vh !important;
+  font-size: 1vw;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-weight: bold;
+}
+
+.cart-total-price{
+  margin-top: -0.2vh;
+  margin-left: 23vw;
+  font-weight: bold;
 }

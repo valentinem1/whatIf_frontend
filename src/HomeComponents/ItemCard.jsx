@@ -20,15 +20,15 @@ const ItemCard = (props) => {
 
         return(
                 <Card className="item-card">
-                    <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-qUdyTvpIG6w35K4hWPUkTeSyMIoUcaXGsTXqmfBK8bXWQqJf" alt="default image" wrapped ui={false}/>
-                    <Card.Content>
+                    <Image src={props.item.image} alt="default image" wrapped ui={false}/>
+                    <Card.Content className="item-card-content">
                     <Header>{itemTitle()}</Header>
                         <Rating icon='star' defaultRating={averageRating} maxRating={5} disabled/>
+                        <h4 className="item-card-price-header">Price:</h4>
+                        <p className="item-card-price">${props.item.price}</p>
                     </Card.Content>
-                    <Card.Content extra>
-                        <p>Price:</p>
-                        <b>${props.item.price}</b>
-                    </Card.Content>
+                    {/* <Card.Content extra> */}
+                    {/* </Card.Content> */}
                 </Card>
         );
     }return null
