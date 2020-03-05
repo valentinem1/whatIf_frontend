@@ -248,15 +248,51 @@ body{
 }
 
 /* login/signup css */
-.login-header{
+.login-signup-header{
   font-size: 2.5vw;
   font-weight: bold;
   text-align: center;
   margin-top: 2vh;
-  margin-bottom: 3vh;
+  margin-bottom: 5vh;
+}
+
+.login-signup-labels{
+  text-align: center;
+  margin-top: 3vh !important;
+  font-size: 1.2vw !important;
+}
+
+.login-signup-input-field{
+  width: 30vw !important;
+}
+
+.login-signup-form{
+  text-align: center;
+}
+
+.login-signup-submit-btn{
+  margin-top: 5vh !important;
+  margin-bottom: 5vh !important;
+  margin-left: 24vw !important;
+  background-color: #000000 !important;
+  color: #f0f0f0 !important;
+  border-radius: 2vw !important;
+  width: 14vw !important;
+  padding: 0.9vw !important;
+}
+
+.check-if-have-account{
+  display: flex;
+  align-items: center;
+}
+
+.have-account-title{
+  font-size: 1vw;
 }
 
 .signup-login-route-button{
+  margin-top: -2vh;
+  margin-left: 1vw;
   text-decoration: underline;
   color: dodgerblue;
   font-weight: bold;
@@ -265,10 +301,6 @@ body{
 .signup-login-route-button:hover{
   cursor: pointer;
   color: #222222;
-}
-
-.login-signup-input-field{
-  width: 50vw !important;
 }
 
 /* cart items css */
@@ -361,4 +393,8 @@ body{
   margin-top: -0.2vh;
   margin-left: 23vw;
   font-weight: bold;
+}
+
+.not-found{
+  text-align: center;
 }

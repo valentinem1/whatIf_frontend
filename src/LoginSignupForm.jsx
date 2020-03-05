@@ -37,10 +37,10 @@ class LoginSignupForm extends Component {
                 <>
                 {this.state.display ? 
                     <>
-                    <Modal.Header className="login-header">Login</Modal.Header>
+                    <Modal.Header className="login-signup-header">Login</Modal.Header>
                     <Modal.Description>
-                        <Form.Field>
-                            <label>Username</label>
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">Username</label>
                             <input 
                                 className="login-signup-input-field"
                                 type="text"
@@ -50,9 +50,10 @@ class LoginSignupForm extends Component {
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
-                        <Form.Field>
-                            <label>Password</label>
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">Password</label>
                             <input
+                                className="login-signup-input-field"
                                 type="password"
                                 placeholder="Password"
                                 name="password"
@@ -61,17 +62,19 @@ class LoginSignupForm extends Component {
                             />
                         </Form.Field>
                     </Modal.Description>
-                    <Button type='submit'>Submit</Button>
-                    <div>
-                        Don't have an account? <p className="signup-login-route-button" onClick={showSignUp}>Please sign up.</p>
+                    <Button className="login-signup-submit-btn" type='submit'>Submit</Button>
+                    <div className="check-if-have-account">
+                        <p className="have-account-title">Don't have an account? </p>
+                        <p className="signup-login-route-button" onClick={showSignUp}>Please sign up.</p>
                     </div>
                     </> : 
                     <>
-                    <Modal.Header>Signup</Modal.Header>
+                    <Modal.Header className="login-signup-header">Signup</Modal.Header>
                     <Modal.Description>  
-                        <Form.Field>
-                            <label>First Name</label>
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">First Name</label>
                             <input 
+                                className="login-signup-input-field"
                                 type="text"
                                 placeholder="First Name"
                                 name="first_name"
@@ -79,9 +82,10 @@ class LoginSignupForm extends Component {
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
-                        <Form.Field>
-                            <label>Last Name</label>
-                            <input 
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">Last Name</label>
+                            <input
+                                className="login-signup-input-field"
                                 type="text"
                                 placeholder="Last Name"
                                 name="last_name"
@@ -89,9 +93,10 @@ class LoginSignupForm extends Component {
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
-                        <Form.Field>
-                            <label>Username</label>
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">Username</label>
                             <input 
+                                className="login-signup-input-field"
                                 type="text"
                                 placeholder="Username"
                                 name="username"
@@ -99,9 +104,10 @@ class LoginSignupForm extends Component {
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
-                        <Form.Field>
-                            <label>Address</label>
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">Address</label>
                             <input
+                                className="login-signup-input-field"
                                 type="text"
                                 placeholder="Address"
                                 name="address"
@@ -109,9 +115,10 @@ class LoginSignupForm extends Component {
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
-                        <Form.Field>
-                            <label>Email</label>
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">Email</label>
                             <input
+                                className="login-signup-input-field"
                                 type="email"
                                 placeholder="Email"
                                 name="email"
@@ -119,9 +126,10 @@ class LoginSignupForm extends Component {
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
-                        <Form.Field>
-                            <label>Picture</label>
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">Picture</label>
                             <input
+                                className="login-signup-input-field"
                                 type="text"
                                 placeholder="Picture"
                                 name="picture"
@@ -129,9 +137,10 @@ class LoginSignupForm extends Component {
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
-                        <Form.Field>
-                            <label>Password</label>
+                        <Form.Field className="login-signup-form">
+                            <label className="login-signup-labels">Password</label>
                             <input
+                                className="login-signup-input-field"
                                 type="password"
                                 placeholder="Password"
                                 name="password"
@@ -140,9 +149,10 @@ class LoginSignupForm extends Component {
                             />
                         </Form.Field>
                     </Modal.Description>
-                    <Button type='submit'>Submit</Button>
-                    <div>
-                        Already with us? <p className="signup-login-route-button" onClick={showSignUp}>Please login</p>
+                    <Button className="login-signup-submit-btn" type='submit'>Submit</Button>
+                    <div className="check-if-have-account">
+                        <p className="have-account-title">Already with us?</p> 
+                        <p className="signup-login-route-button" onClick={showSignUp}>Please login</p>
                     </div>
                     </>
                     }
@@ -154,7 +164,6 @@ class LoginSignupForm extends Component {
         event.preventDefault()
 
         let { first_name, last_name, username, address, email, picture, password } = this.state
-
             fetch(`http://localhost:4000/${this.state.display ? "login" : "users"}`, {
                 method: "POST",
                 headers: {
@@ -176,7 +185,6 @@ class LoginSignupForm extends Component {
                 this.props.setUser(userData.user)
                 this.props.history.push("/profile")
             })
-
         }
         
         render() {

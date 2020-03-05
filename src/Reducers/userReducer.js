@@ -20,7 +20,6 @@ const userReducer = (state=initialState, action) => {
             return {...state, cart: newArr}
 
         case "CREATE_ORDER":
-            // const orderItem = action.newOrder.map(item => item)
             return {...state, cart: [], orders: [...state.orders, action.newOrder]}
 
         default:

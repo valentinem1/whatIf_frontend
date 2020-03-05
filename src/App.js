@@ -10,7 +10,7 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ItemShowContainer from './ItemComponents/ItemShowContainer'
 import CartContainer from './CartComponents/CartContainer'
 import OrderContainer from './OrderComponents/OrderContainer'
-
+import NotFound from './NotFound'
 import { connect } from 'react-redux'
 import { fetchItems } from './Actions/itemsActions'
 import { userPersist } from './Actions/userActions'
@@ -33,6 +33,7 @@ class App extends Component {
       .then(r => r.json())
       .then(userData => {
         if(userData.token){
+          // console.log(userData)
           this.props.userPersist(userData.user)
         }
       })
@@ -55,10 +56,10 @@ class App extends Component {
         </Switch>
 
       </div>
-
     );
   }
 }
 
+{/* <Route component={ NotFound } /> */}
 
 export default connect(null, { fetchItems, userPersist })(withRouter(App));
