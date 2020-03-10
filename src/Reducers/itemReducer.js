@@ -17,6 +17,10 @@ const itemReducer = (state=initialState, action) => {
             let newQuantity = state.map(item => item.id === action.item.id ? action.item : item)
             return newQuantity
 
+        case "SORT_BY_PRICE":
+            let lowToHigh = action.sortItems.sort((a, b) => a.price - b.price)
+            return [...state, lowToHigh]
+
         default:
             return state;
     }

@@ -20,3 +20,10 @@ export const increaseItemQuantity = (item) => {
         item
     }
 }
+
+export const sortByPrice = (sortItems) => {
+    return {
+        type: "SORT_BY_PRICE", 
+        sortItems
+    }
+}

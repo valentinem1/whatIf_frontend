@@ -1,6 +1,9 @@
 /* home page css */
 body{
   background-color: #FAF9F5;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 .cib-etsy{
@@ -13,9 +16,21 @@ body{
   margin-bottom: 7vh !important;
 }
 
-.ui.six.cards{
+.home-page{
+  display: flex;
+  align-items: center;
+}
+
+.filter-container{
+  position: absolute;
+  float: left;
+  margin-top: -270vh;
+  margin-left: 1vw;
+}
+
+.all-items-container{
   margin-top: 7vh;
-  margin-left: 4vw;
+  margin-left: 20vw !important;
   margin-bottom: 10vh;
 }
 
@@ -82,7 +97,6 @@ body{
   height: 100vh !important;
   margin-left: -4vw !important;
   border-radius: 0.5vw !important;
-  /* margin-top: -15vh !important; */
 }
 
 .item-title-header{
@@ -91,7 +105,6 @@ body{
 }
 
 .item-info{
-  /* margin-top: 3vh !important; */
   margin-left: 8vw;
   font-size: 1.4vw;
   font-family: "Guardian-EgypTT",serif;
@@ -120,7 +133,6 @@ body{
 }
 
 .item-quantity-left:hover{
-  /* border: solid 3px #222222; */
   padding: 0.8vw;
 }
 
@@ -253,6 +265,12 @@ body{
 }
 
 /* login/signup css */
+.ui.active.modal{
+    display: block;
+    width: 28vw;
+    height: 100vh;
+}
+
 .login-signup-header{
   font-size: 2.5vw;
   font-weight: bold;
@@ -261,34 +279,47 @@ body{
   margin-bottom: 5vh;
 }
 
-.login-signup-labels{
+.login-labels{
   text-align: center;
   margin-top: 3vh !important;
-  font-size: 1.2vw !important;
+  font-size: 1vw !important;
+  margin-bottom: 2vh !important;
 }
 
 .login-signup-input-field{
-  width: 30vw !important;
+  width: 20vw !important;
+}
+
+.login-form{
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-signup-form{
-  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-labels{
+  margin-top: 0vh !important;
+  font-size: 1vw !important;
+  text-align: center !important;
+  
 }
 
 .login-signup-submit-btn{
-  margin-top: 5vh !important;
-  margin-bottom: 5vh !important;
-  margin-left: 24vw !important;
-  background-color: #000000 !important;
-  color: #f0f0f0 !important;
-  border-radius: 2vw !important;
-  width: 14vw !important;
-  padding: 0.9vw !important;
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh !important;
 }
 
 .check-if-have-account{
   display: flex;
   align-items: center;
+  margin-left: 2vw;
+  margin-top: 8vh;
 }
 
 .have-account-title{
@@ -306,6 +337,13 @@ body{
 .signup-login-route-button:hover{
   cursor: pointer;
   color: #222222;
+}
+
+.invalid-logins{
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-size: 1.1vw;
+  text-align: center;
+  color: #C13C27;;
 }
 
 /* cart items css */

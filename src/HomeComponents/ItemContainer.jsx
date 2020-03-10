@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"
 import { Card } from 'semantic-ui-react'
 
 const ItemContainer = (props) => {
-
+    console.log(props.items)
     return(
 
-        <Card.Group itemsPerRow={6}>
+        <Card.Group className="all-items-container">
             {!props.items ? null : props.items.map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
         </Card.Group>
 
