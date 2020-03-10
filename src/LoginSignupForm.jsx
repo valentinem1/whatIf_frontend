@@ -3,6 +3,7 @@ import { Button, Form, Modal } from 'semantic-ui-react'
 
 import { connect } from 'react-redux'
 import { setUser } from './Actions/userActions'
+import { loginError } from './Actions/loginErrorsActions'
 
 class LoginSignupForm extends Component {
 
@@ -61,6 +62,7 @@ class LoginSignupForm extends Component {
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
+                        <p>{this.props.error.errors}</p>
                     </Modal.Description>
                     <Button className="login-signup-submit-btn" type='submit'>Submit</Button>
                     <div className="check-if-have-account">
@@ -181,13 +183,20 @@ class LoginSignupForm extends Component {
             })
             .then(r => r.json())
             .then(userData => {
-                localStorage.setItem("token", userData.token)
-                this.props.setUser(userData.user)
-                this.props.history.push("/profile")
+                if(userData.user){
+                    localStorage.setItem("token", userData.token)
+                    this.props.setUser(userData.user)
+                    this.props.history.push("/profile")
+                }
+                else{
+                    console.log(userData)
+                    this.props.loginError(userData)
+                }
             })
         }
         
         render() {
+            console.log(this.props.error.errors)
         return (
 
             <Form onSubmit={this.handleSubmit}>
@@ -199,4 +208,11 @@ class LoginSignupForm extends Component {
     }
 }
 
-export default connect(null, { setUser })(LoginSignupForm);
+const mapStateToProps = (state) => {
+    console.log(state)
+    return{
+        error: state.errors
+    }
+}
+
+export default connect(mapStateToProps, { setUser, loginError })(LoginSignupForm);

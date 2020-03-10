@@ -5,7 +5,6 @@ import { Header, Image } from 'semantic-ui-react'
 // import{ userProfile } from '../Actions/userActions'
 
 const ProfileCard = (props) => {
-    
     return (
         <Header as='h2'>
             <Image circular src={props.user.picture} /> {props.user.username}
@@ -13,6 +12,10 @@ const ProfileCard = (props) => {
         
     );
 };
+
+ProfileCard.defaultProps = {
+    picture: "https://profiles.utdallas.edu/img/default.png"    
+}
 
 const mapStateToProps = (state) => {
     return {

@@ -33,7 +33,6 @@ class App extends Component {
       .then(r => r.json())
       .then(userData => {
         if(userData.token){
-          // console.log(userData)
           this.props.userPersist(userData.user)
         }
       })

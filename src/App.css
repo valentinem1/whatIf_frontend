@@ -44,13 +44,18 @@ body{
 }
 
 .signup-menu-bar{
-  width: 10vw !important;
+  width: 5.18vw !important;
   float: right;
 }
 
 .sign-in{
   color: #000000;
   font-weight: bold;
+  font-size: 1vw;
+}
+
+.sign-in:hover{
+  cursor: pointer;
 }
 
 /* item show page css */
