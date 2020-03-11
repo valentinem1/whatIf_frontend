@@ -6,7 +6,6 @@ export const fetchItems = (items) => {
 }
 
 export const decreaseItemQuantity = (item) => {
-    // console.log(item)
     return{
         type: "DECREASE_ITEM_QUANTITY",
         item
@@ -14,16 +13,30 @@ export const decreaseItemQuantity = (item) => {
 }
 
 export const increaseItemQuantity = (item) => {
-    // console.log(item)
     return{
         type: "INCREASE_ITEM_QUANTITY",
         item
     }
 }
 
-export const sortByPrice = (sortItems) => {
-    return {
-        type: "SORT_BY_PRICE", 
-        sortItems
+export const sortByHighPrice = (checkItems) => {
+    console.log("from action:", checkItems)
+    return{
+        type: "SORT_BY_HIGH_PRICE", 
+        checkItems
+    }
+}
+
+export const sortByLowPrice = (checkItems) => {
+    return{
+        type: "SORT_BY_LOW_PRICE",
+        checkItems
+    }
+}
+
+export const searchItems = (value) => {
+    return{
+        type: "SEARCH_ITEMS",
+        value
     }
 }

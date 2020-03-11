@@ -5,20 +5,26 @@ import { Link } from "react-router-dom"
 import { Card } from 'semantic-ui-react'
 
 const ItemContainer = (props) => {
-    console.log(props.items)
+
+    const filterSearch = () => {
+        let newArr = props.items.filter(item => {
+            let newSearchValue = props.searchItem.toLowerCase()
+            return item.title.toLowerCase().includes(newSearchValue)
+        })
+        return newArr
+    }
     return(
-
         <Card.Group className="all-items-container">
-            {!props.items ? null : props.items.map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
+            {filterSearch().map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
         </Card.Group>
-
     );
 
 };
 
 const mapStateToProps = (state) => {
     return {
-        items: state.items
+        items: state.items.allItems,
+        searchItem: state.items.search
     }
 }
 

@@ -8,7 +8,7 @@ const InfoContainer = (props) => {
     
         const item_id = parseInt(props.matchProps.params.id)
         let item = props.items.find(item => item.id === item_id)
-
+    // console.log(item)
         const fetchToCart = () => {
             fetch('http://localhost:4000/cart_joiners', {
                 method: "POST",
@@ -72,7 +72,7 @@ const InfoContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return{
-        items: state.items
+        items: state.items.allItems
     }
 }
 

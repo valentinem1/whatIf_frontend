@@ -10,7 +10,7 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ItemShowContainer from './ItemComponents/ItemShowContainer'
 import CartContainer from './CartComponents/CartContainer'
 import OrderContainer from './OrderComponents/OrderContainer'
-import NotFound from './NotFound'
+
 import { connect } from 'react-redux'
 import { fetchItems } from './Actions/itemsActions'
 import { userPersist } from './Actions/userActions'
@@ -58,7 +58,5 @@ class App extends Component {
     );
   }
 }
-
-{/* <Route component={ NotFound } /> */}
 
 export default connect(null, { fetchItems, userPersist })(withRouter(App));

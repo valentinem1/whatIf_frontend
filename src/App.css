@@ -73,6 +73,14 @@ body{
   cursor: pointer;
 }
 
+.search-form{
+  width: 50vw;
+  margin-left: 22vw;
+  margin-bottom: 4vh;
+  margin-top: -1vh;
+  
+}
+
 /* item show page css */
 .item-info-card{
   margin-top: 6vw;
@@ -89,7 +97,6 @@ body{
 .item-image-description-block{
   display: flex;
   align-items: center;
-  /* margin-top: 10vh; */
 }
 
 .item-image{
