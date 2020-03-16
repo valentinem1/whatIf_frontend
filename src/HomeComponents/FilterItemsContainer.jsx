@@ -1,17 +1,20 @@
 import React from 'react';
-import { Menu, Checkbox, Form, Label } from 'semantic-ui-react'
+import { Menu, Form, Label } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { sortByHighPrice } from '../Actions/itemsActions'
+import { sortAllPrice, sortLowPrice, sortHighPrice } from '../Actions/itemsActions'
 
 const FilterItemsContainer = (props) => {
 
-    const clickingHighPrice = (event) => {
-        props.sortByHighPrice(event.target.checked)
-        console.log(props.highPrice)
+    const handleAllPrice = (event) => {
+        props.sortAllPrice(event.target.value)
     }
 
-    const clickingLowPrice = (event) => {
-        console.log(event.target.checked)
+    const handleLowPrice = (event) => {
+        props.sortLowPrice(event.target.value)
+    }
+
+    const handleHighPrice = (event) => {
+        props.sortHighPrice(event.target.value)
     }
 
     return (
@@ -20,22 +23,37 @@ const FilterItemsContainer = (props) => {
             <Menu text vertical>
                 <Menu.Item header>Sort By</Menu.Item>
                 <Form>
-                    <Label>price: Highest to Lowest</Label>
+                    <Label>Any Price</Label>
                     <Form.Input
+                        disabled={props.checkLow || props.checkHigh ? true : false}
+                        checked={props.checkAll}
                         type="checkbox"
-                        name="highPrice"
-                        value={props.highPrice}
-                        onChange={clickingHighPrice}
+                        name="All"
+                        value="All"
+                        onChange={handleAllPrice}
                     />
                 </Form>
                 <Form>
                     <Label>price: Lowest to Highest</Label>
                     <Form.Input
+                        disabled={props.checkAll || props.checkHigh ? true : false}
+                        checked={props.checkLow}
                         type="checkbox"
                         name="lowPrice"
-                        value={props.lowPrice}
-                        onClick={clickingLowPrice}
+                        value="lowPrice"
+                        onClick={handleLowPrice}
                         />
+                </Form>
+                <Form>
+                    <Label>price: Highest to Lowest</Label>
+                    <Form.Input
+                        disabled={props.checkAll || props.checkLow ? true : false}
+                        checked={props.checkHigh}
+                        type="checkbox"
+                        name="highPrice"
+                        value="highPrice"
+                        onChange={handleHighPrice}
+                    />
                 </Form>
             </Menu>
         </div>
@@ -45,8 +63,10 @@ const FilterItemsContainer = (props) => {
 const mapStateToProps = (state) => {
     return{
         items: state.items,
-        highPrice: state.items.highPrice
+        checkAll: state.items.checkAll,
+        checkLow: state.items.checkLow,
+        checkHigh: state.items.checkHigh
     }
 }
 
-export default connect(mapStateToProps, { sortByHighPrice })(FilterItemsContainer);
+export default connect(mapStateToProps, { sortAllPrice, sortLowPrice, sortHighPrice })(FilterItemsContainer);

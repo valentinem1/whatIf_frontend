@@ -19,24 +19,38 @@ export const increaseItemQuantity = (item) => {
     }
 }
 
-export const sortByHighPrice = (checkItems) => {
-    console.log("from action:", checkItems)
-    return{
-        type: "SORT_BY_HIGH_PRICE", 
-        checkItems
-    }
-}
-
-export const sortByLowPrice = (checkItems) => {
-    return{
-        type: "SORT_BY_LOW_PRICE",
-        checkItems
-    }
-}
+// export const sortItems = (checkItems) => {
+//     // console.log("from action:", checkItems)
+//     return{
+//         type: "SORT_ITEMS", 
+//         checkItems
+//     }
+// }
 
 export const searchItems = (value) => {
     return{
         type: "SEARCH_ITEMS",
         value
+    }
+}
+
+export const sortAllPrice = (checkItems) => {
+    return{
+        type: "SORT_ALL_PRICE",
+        checkItems
+    }
+} 
+
+export const sortLowPrice = (checkItems) => {
+    return{
+        type: "SORT_LOW_PRICE",
+        checkItems
+    }
+} 
+
+export const sortHighPrice = (checkItems) => {
+    return{
+        type: "SORT_HIGH_PRICE",
+        checkItems
     }
 }

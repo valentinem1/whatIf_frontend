@@ -18,19 +18,19 @@ class HeaderContainer extends Component {
                 <Header><Link to="/"><i className="cib-etsy">Watif</i></Link></Header>
                 
                         {localStorage.token ? 
-                        <Header className="logged-in-menu-bar">
-                        <Menu >
+                        <Header className="logged-in-menu-header">
+                        <Menu className="logged-in-menu-bar">
                         <Menu.Item>
-                            <Link to="/profile">Profile</Link>
+                            <Link id="menu-bar-tags" to="/profile">Profile</Link>
                         </Menu.Item>
                         <Menu.Item>
-                            <Link to="/orders">Orders</Link>
+                            <Link id="menu-bar-tags" to="/orders">Orders</Link>
                         </Menu.Item>
                         <Menu.Item>
-                            <Link to="/cart"><Icon name="shopping cart" size="large"/></Link>
+                            <Link id="menu-bar-tags" to="/cart"><Icon name="shopping cart" size="large"/></Link>
                         </Menu.Item>
                         <Menu.Item>
-                            <Link onClick={this.logOutUser} to="/"><Icon name="sign-out" size="large"/></Link>
+                            <Link id="menu-bar-tags" onClick={this.logOutUser} to="/"><Icon name="sign-out" size="large"/></Link>
                         </Menu.Item>
                         </Menu>
                         </Header> : 

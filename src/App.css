@@ -7,13 +7,16 @@ body{
 }
 
 .cib-etsy{
-  color: #f0f0f0 !important;
+  color: #ffa500 !important;
 }
 
 .logo{
-  background-color: #ffa500 !important;
+  background-color: #ffffff !important;
   font-size: 3vw !important;
   margin-bottom: 7vh !important;
+  margin-top: -1vh !important;
+  padding-top: 3vh !important;
+  padding-bottom: 1vh !important;
 }
 
 .home-page{
@@ -47,20 +50,27 @@ body{
 
 .item-card-price{
   color: #000000;
-  /* padding-bottom: -20vh !important; */
   margin-bottom: -10vh !important;
 }
 
 .logged-in-menu-bar{
-  width: 19.7vw !important;
-  margin-left: 65vw !important;
-  margin-bottom: -10vh !important;
+  margin-top: -10vh !important;
+  margin-left: 75vw !important;
+  width: 19.7vw fixed !important;
+  position: absolute !important;
+  right: 0 !important;
+}
+
+#menu-bar-tags{
   color: #000000 !important;
 }
 
 .signup-menu-bar{
-  width: 5.18vw !important;
-  float: right;
+  margin-top: -10vh !important;
+  margin-left: 75vw !important;
+  width: 19.7vw fixed !important;
+  position: absolute !important;
+  right: 0 !important;
 }
 
 .sign-in{
@@ -77,7 +87,7 @@ body{
   width: 50vw;
   margin-left: 22vw;
   margin-bottom: 4vh;
-  margin-top: -1vh;
+  margin-top: -4vh;
   
 }
 

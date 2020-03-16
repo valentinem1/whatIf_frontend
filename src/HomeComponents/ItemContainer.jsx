@@ -6,6 +6,7 @@ import { Card } from 'semantic-ui-react'
 
 const ItemContainer = (props) => {
 
+    // filter the item depending on the search bar input
     const filterSearch = () => {
         let newArr = props.items.filter(item => {
             let newSearchValue = props.searchItem.toLowerCase()
@@ -13,9 +14,22 @@ const ItemContainer = (props) => {
         })
         return newArr
     }
+
+    const sortByPrice = () => {
+        if(props.sortValue === "highPrice"){
+            let sortHighItems = props.items.sort((item1, item2) => item2.price - item1.price)
+            return sortHighItems
+        }else if(props.sortValue === "lowPrice"){
+            let sortLowItems = props.items.sort((item1, item2) => item1.price - item2.price)
+            return sortLowItems
+        }else if(props.sortValue === "All"){
+            return props.items.sort(() => { return 0.5 - Math.random() })
+        }
+    }
+
     return(
         <Card.Group className="all-items-container">
-            {filterSearch().map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
+            {filterSearch(sortByPrice()).map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
         </Card.Group>
     );
 
@@ -24,7 +38,11 @@ const ItemContainer = (props) => {
 const mapStateToProps = (state) => {
     return {
         items: state.items.allItems,
-        searchItem: state.items.search
+        searchItem: state.items.search,
+        sortValue: state.items.sortValue,
+        checkAll: state.items.checkAll,
+        checkLow: state.items.checkLow,
+        checkHigh: state.items.checkHigh
     }
 }
 

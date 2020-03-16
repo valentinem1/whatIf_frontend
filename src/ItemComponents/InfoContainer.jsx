@@ -7,8 +7,10 @@ import { decreaseItemQuantity } from '../Actions/itemsActions'
 const InfoContainer = (props) => {
     
         const item_id = parseInt(props.matchProps.params.id)
-        let item = props.items.find(item => item.id === item_id)
-    // console.log(item)
+        // find the item from the url that matches the item in the store to display all its information on its show page
+        let item = props.items ? props.items.find(item => item.id === item_id) : null
+        
+        // fetches item to the cart once clicking on add to cart button
         const fetchToCart = () => {
             fetch('http://localhost:4000/cart_joiners', {
                 method: "POST",
@@ -27,11 +29,13 @@ const InfoContainer = (props) => {
             })
         }
 
-    if(props.items.length){
+
+    if(item){
         const averageRating = () => {
             if(item.reviews === undefined){
                 return 0
             }else{
+                // calculating the average rating for each item
                 let ratingArr = item.reviews.map(review => review.rating)
                 let sumRatingArr = ratingArr.length === 0 ? 0 : ratingArr.reduce((total, num) => total + num)
                 let average = sumRatingArr === 0 ? 0 : sumRatingArr / ratingArr.length
@@ -39,6 +43,7 @@ const InfoContainer = (props) => {
             }
         }
 
+        // calculates the number of ratings of an item
         const ratingArray = () => {
             if(item.reviews === undefined){
                 return 0
@@ -47,6 +52,7 @@ const InfoContainer = (props) => {
                 return ratingArr.length
             }
         }
+        
         return (
             <div className="item-info-card">
                 <Container>
