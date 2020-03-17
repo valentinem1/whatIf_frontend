@@ -24,9 +24,6 @@ class HeaderContainer extends Component {
                             <Link id="menu-bar-tags" to="/profile">Profile</Link>
                         </Menu.Item>
                         <Menu.Item>
-                            <Link id="menu-bar-tags" to="/orders">Orders</Link>
-                        </Menu.Item>
-                        <Menu.Item>
                             <Link id="menu-bar-tags" to="/cart"><Icon name="shopping cart" size="large"/></Link>
                         </Menu.Item>
                         <Menu.Item>

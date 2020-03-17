@@ -9,7 +9,6 @@ import HomeContainer from './HomeComponents/HomeContainer'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ItemShowContainer from './ItemComponents/ItemShowContainer'
 import CartContainer from './CartComponents/CartContainer'
-import OrderContainer from './OrderComponents/OrderContainer'
 
 import { connect } from 'react-redux'
 import { fetchItems } from './Actions/itemsActions'
@@ -50,7 +49,6 @@ class App extends Component {
           <Route exact path="/" component={ HomeContainer } />
           <Route exact path="/profile" component={ ProfileContainer } />
           <Route exact path="/cart" component={ CartContainer } />
-          <Route exact path="/orders" component={ OrderContainer } />
           <Route path='/:id' component={ ItemShowContainer } />
         </Switch>
 

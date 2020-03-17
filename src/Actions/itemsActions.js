@@ -19,14 +19,6 @@ export const increaseItemQuantity = (item) => {
     }
 }
 
-// export const sortItems = (checkItems) => {
-//     // console.log("from action:", checkItems)
-//     return{
-//         type: "SORT_ITEMS", 
-//         checkItems
-//     }
-// }
-
 export const searchItems = (value) => {
     return{
         type: "SEARCH_ITEMS",

@@ -25,10 +25,21 @@ body{
 }
 
 .filter-container{
-  position: absolute;
+  /* position: fixed;
   float: left;
-  margin-top: -270vh;
-  margin-left: 1vw;
+  margin-top: -280vh;
+  margin-left: 1vw; */
+  height: 60%;
+  width: 10%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 5px;
+  border-radius: 1rem;
+  margin-top: 14rem;
+  margin-left: 2rem;
 }
 
 .all-items-container{
