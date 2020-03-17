@@ -26,23 +26,9 @@ export const searchItems = (value) => {
     }
 }
 
-export const sortAllPrice = (checkItems) => {
+export const sortByPrice = (checkItems) => {
     return{
-        type: "SORT_ALL_PRICE",
-        checkItems
-    }
-} 
-
-export const sortLowPrice = (checkItems) => {
-    return{
-        type: "SORT_LOW_PRICE",
-        checkItems
-    }
-} 
-
-export const sortHighPrice = (checkItems) => {
-    return{
-        type: "SORT_HIGH_PRICE",
+        type: "SORT_BY_PRICE",
         checkItems
     }
 }

@@ -12,6 +12,13 @@ export const userPersist = (persistedUser) => {
     }
 }
 
+export const deleteUser = (user) => {
+    return {
+        type: "DELETE_USER",
+        user
+    }
+}
+
 export const addToCart = (cartItem) => {
     return {
         type: "ADD_TO_CART", 

@@ -23,7 +23,7 @@ const ItemInfoCard = (props) => {
     if(props.item){
         return (
             <>
-            {props.pathname === "/orders" ? 
+            {props.pathname === "/profile" ? 
             <Container className="order-card-container">
             <Segment className="order-segment">
                 <div className="order-cart-item-container">

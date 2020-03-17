@@ -1,9 +1,6 @@
 const initialState = {
     allItems: [],
-    sortValue: "All", 
-    checkAll: false,
-    checkLow: false,
-    checkHigh: false,
+    sortValue: "All",
     search: ""
 }
 
@@ -22,14 +19,8 @@ const itemReducer = (state=initialState, action) => {
             let newQuantity = state.allItems.map(item => item.id === action.item.id ? action.item : item)
             return {...state, allItems: newQuantity}
 
-        case "SORT_ALL_PRICE":
+        case "SORT_BY_PRICE":
             return {...state, sortValue: action.checkItems, checkAll: !state.checkAll}
-
-        case "SORT_LOW_PRICE":
-            return {...state, sortValue: action.checkItems, checkLow: !state.checkLow}
-
-        case "SORT_HIGH_PRICE":
-            return {...state, sortValue: action.checkItems, checkHigh: !state.checkHigh}
 
         case "SEARCH_ITEMS":
             return {...state, search: action.value}

@@ -6,8 +6,11 @@ body{
   padding: 0;
 }
 
-.cib-etsy{
-  color: #ffa500 !important;
+.watif-logo{
+  color: #F1641E !important;
+  font-family: time;
+  font-size: 3.5vw;
+  font-weight: 100;
 }
 
 .logo{
@@ -16,7 +19,7 @@ body{
   margin-bottom: 7vh !important;
   margin-top: -1vh !important;
   padding-top: 3vh !important;
-  padding-bottom: 1vh !important;
+  padding-bottom: 0vh !important;
 }
 
 .home-page{
@@ -25,31 +28,40 @@ body{
 }
 
 .filter-container{
-  /* position: fixed;
-  float: left;
-  margin-top: -280vh;
-  margin-left: 1vw; */
-  height: 60%;
-  width: 10%;
+  width: 12vw;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   overflow-x: hidden;
-  padding-top: 5px;
-  border-radius: 1rem;
-  margin-top: 14rem;
-  margin-left: 2rem;
+  margin-top: 25vh;
+  margin-left: 2vw;
+}
+
+.sort-by-input{
+  display: flex;
+  align-items: center;
+  margin-left: 1vw;
+}
+
+.sort-input-field{
+  margin-top: 1vh !important;
+}
+
+.sort-label-tag{
+  margin-left: 0.5vw;
+  margin-top: -1.5vh;
 }
 
 .all-items-container{
   margin-top: 7vh;
-  margin-left: 20vw !important;
+  margin-left: 14vw !important;
   margin-bottom: 10vh;
 }
 
 .ui.card>.image>img{
-  height: 35vh !important;
+  height: 25vh !important;
+  width: 18vw;
 }
 
 .item-card-price-header{
@@ -185,7 +197,8 @@ body{
 }
 
 .item-card{
-  height: 60vh !important;
+  height: 47vh !important;
+  width: 18vw !important;
   margin-left: 2vw !important;
   margin-top: 2vh !important;
   margin-bottom: 3vh !important;
@@ -241,9 +254,10 @@ body{
   margin-bottom: 20vh !important;
 }
 
-/* orders container css */
+/* profile container css */
 .order-header{
   text-align: center;
+  margin-top: 5vh !important;
   margin-bottom: 3vw;
 }
 
@@ -290,6 +304,31 @@ body{
   font-size: 1vw;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   color: #222222;
+}
+
+.profile-header{
+  margin-bottom: -7vh !important;
+  margin-left: 2vw !important;
+  font-size: 2vw !important;
+}
+
+.profile-picture{
+  height: 18.5vh !important;
+  width: 10vw !important;
+}
+
+.delete-profile-btn{
+  margin-left: 13.5vw !important;
+  margin-bottom: 8vh !important;
+  font-size: 0.75vw !important;
+  font-weight: 400 !important;
+  background-color: #FF6347 !important;
+  padding: 0.4vw !important;
+  color: #f3f2f2 !important;
+}
+
+.profile-order-separation{
+  width: 90vw;
 }
 
 /* login/signup css */

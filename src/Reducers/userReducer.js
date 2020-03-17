@@ -11,6 +11,9 @@ const userReducer = (state=initialState, action) => {
         case "PERSIST_USER":
             return {...state, ...action.persistedUser}
 
+        case "DELETE_USER":
+            return {...state}
+
         case "ADD_TO_CART":
             return {...state, cart: [...state.cart, action.cartItem]}
             
