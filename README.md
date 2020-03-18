@@ -15,7 +15,7 @@ A `React and Rails` designed as an e-marketplace(Etsy clone) allowing creativity
 - Dotenv - A zero-dependency module that loads environment variables
 
 
-**Back End:** link to [watif-backend](https://github.com/valentinem1/watif_backend)
+**Back End:** link to [Back End Repository](https://github.com/valentinem1/watif_backend)
 - Ruby [2.6.1]
 - Rails [~> 6.0.2, >= 6.0.2.1] - MVC web framework used as an API
 - Bcrypt [~> 3.1.7] - Encrypt and secure user passwords
@@ -42,7 +42,7 @@ _For that specific situation I added some seed data_<br />
 To launch the app you'll have to follow the following steps:
 
 **Back End setup**
-- Clone this following repo here: [watif-backend](https://github.com/valentinem1/watif_backend) and `cd` into it
+- Clone this following repo here: [Back End Repository](https://github.com/valentinem1/watif_backend) and `cd` into it
 - Run `bundle install` to install all required dependencies
 - Ensure you have PostgreSQL up and running
 - Run `rails db:create` to create the database locally
@@ -56,5 +56,5 @@ To launch the app you'll have to follow the following steps:
 - Run `npm start` to run the server
 - Ensure it is running locally on `http://localhost:3000` to view it in the browser
 
-![](/images/homepage.png)
+![Home Page picture](images/homepage.png)
 
