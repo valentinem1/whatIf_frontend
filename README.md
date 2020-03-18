@@ -56,5 +56,5 @@ To launch the app you'll have to follow the following steps:
 - Run `npm start` to run the server
 - Ensure it is running locally on `http://localhost:3000` to view it in the browser
 
-![Home Page picture](./images/homepagedemo.jpeg)
+![Home Page picture](images/homepagedemo.jpeg)
 
