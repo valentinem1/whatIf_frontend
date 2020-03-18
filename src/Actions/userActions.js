@@ -26,6 +26,13 @@ export const addToCart = (cartItem) => {
     }
 }
 
+export const increaseCartItemQuantity = (cartItem) => {
+    return { 
+        type: "INCREASE_CART_ITEM_QUANTITY",
+        cartItem
+    }
+}
+
 export const removeFromCart = (cartItem) => {
     return {
         type: "REMOVE_FROM_CART",

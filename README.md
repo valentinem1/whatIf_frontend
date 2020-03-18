@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Watif</h1>
+
+An e-marketplace allowing creativity and uniqueness in products from handmade to vintage items and craft supplies.
 
 ## Available Scripts
 

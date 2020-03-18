@@ -13,7 +13,7 @@ const ProfileCard = (props) => {
 };
 
 ProfileCard.defaultProps = {
-    picture: "https://profiles.utdallas.edu/img/default.png"    
+    src: "https://profiles.utdallas.edu/img/default.png"    
 }
 
 const mapStateToProps = (state) => {

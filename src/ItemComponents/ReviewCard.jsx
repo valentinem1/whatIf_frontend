@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { Container, Rating } from 'semantic-ui-react'
 
 const ReviewCard = (props) => {
-
-    const handleDelete = (event) => {
+    console.log(props.review)
+    const handleDelete = () => {
         props.deleteReview(props.review.id)
     }
 

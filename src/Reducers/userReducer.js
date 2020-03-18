@@ -1,5 +1,5 @@
 const initialState = {
-
+    
 }
 
 const userReducer = (state=initialState, action) => {
@@ -15,8 +15,15 @@ const userReducer = (state=initialState, action) => {
             return {...state}
 
         case "ADD_TO_CART":
+            console.log("state:", state.cart)
             return {...state, cart: [...state.cart, action.cartItem]}
             
+        case "INCREASE_CART_ITEM_QUANTITY":
+            let existingItem = state.cart.find(item => item.item.id === action.cartItem.id)
+            let newCartItemQuantity = state.cart.forEach(cartItem => cartItem.item.quantity = existingItem.quantity + 1)
+            console.log(state.cart.forEach(cartItem => cartItem.item.quantity))
+            return {...state, cart: [...state.cart, newCartItemQuantity]}
+
         case "REMOVE_FROM_CART":
             let newArr = state.cart.filter(item => item.id !== action.cartItem.cart_joiner.id)
             return {...state, cart: newArr}

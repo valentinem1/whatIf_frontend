@@ -43,7 +43,7 @@ const ItemInfoCard = (props) => {
                     <div className="cart-item-info">
                         <Link to={`/${props.item.id}`}><h3 className="order-item-title">{props.item.title}</h3></Link>
                         <p className="cart-item-price">Price: ${props.item.price}</p>
-                        {/* <p>Quantity: {props.cart_joiner_quantity}</p> */}
+                        <p>Quantity: {props.cart_joiner_quantity}</p>
                         <Button className="remove-from-cart-btn" size='small' onClick={removeItemFromCart}>Remove</Button>
                     </div>
                 </div>

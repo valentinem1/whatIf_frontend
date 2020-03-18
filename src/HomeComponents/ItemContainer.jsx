@@ -39,10 +39,7 @@ const mapStateToProps = (state) => {
     return {
         items: state.items.allItems,
         searchItem: state.items.search,
-        sortValue: state.items.sortValue,
-        checkAll: state.items.checkAll,
-        checkLow: state.items.checkLow,
-        checkHigh: state.items.checkHigh
+        sortValue: state.items.sortValue
     }
 }
 

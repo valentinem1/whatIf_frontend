@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Container, Button, Rating } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { addToCart } from '../Actions/userActions'
+import { addToCart, increaseCartItemQuantity } from '../Actions/userActions'
 import { decreaseItemQuantity } from '../Actions/itemsActions'
 
 const InfoContainer = (props) => {
@@ -24,8 +24,18 @@ const InfoContainer = (props) => {
             })
             .then(r => r.json())
             .then(cartItem => {
-                props.addToCart(cartItem)
-                props.decreaseItemQuantity(cartItem.item)
+                if(props.userCart.length){
+                    let findMatchingItem = props.userCart.find(item => item.item.id === cartItem.item.id)
+                    if(findMatchingItem){
+                        console.log("already in cart")
+                        props.increaseCartItemQuantity(cartItem.item)
+                        props.decreaseItemQuantity(cartItem.item)
+                    }else{
+                        console.log("not in cart")
+                        props.addToCart(cartItem)
+                        props.decreaseItemQuantity(cartItem.item)
+                    }
+                }
             })
         }
 
@@ -78,8 +88,9 @@ const InfoContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return{
-        items: state.items.allItems
+        items: state.items.allItems,
+        userCart: state.user.cart
     }
 }
 
-export default connect(mapStateToProps, { addToCart, decreaseItemQuantity })(InfoContainer);
+export default connect(mapStateToProps, { addToCart, increaseCartItemQuantity, decreaseItemQuantity })(InfoContainer);
