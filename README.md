@@ -17,7 +17,7 @@ A `React and Rails` designed as an e-marketplace(Etsy clone) allowing creativity
 - CSS3 for customization
 
 
-**Back End:** link to [Back End Repository](https://github.com/valentinem1/watif_backend)
+**Link to [Back End Repository](https://github.com/valentinem1/watif_backend)**
 - Ruby [2.6.1]
 - Rails [~> 6.0.2, >= 6.0.2.1] - MVC web framework used as an API
 - Bcrypt [~> 3.1.7] - Encrypt and secure user passwords
@@ -39,7 +39,6 @@ Before you begin, ensure you have installed the latest version of:
 
 ## Installing
 _Note: Without an Etsy API key, the project will not be able to have any data_<br />
-_For that specific situation I added some seed data_<br />
 
 To launch the app you'll have to follow the following steps:
 
