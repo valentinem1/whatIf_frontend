@@ -80,7 +80,7 @@ Upon checkout the user can see its order on its profile.<br />
 
 ![orders](./images/orders.gif)
 
-## Watif Structure
+## Structure
 
 **Wireframe**
 
@@ -88,6 +88,6 @@ Upon checkout the user can see its order on its profile.<br />
 
 **Models**
 
-![models](./images/models.png<br />)
+![models](./images/models_diagram.png)<br />
 
 
