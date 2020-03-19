@@ -76,5 +76,18 @@ Once the item is added to the cart the user can see it in their own cart. They c
 
 ![cart](./images/cart-page.gif)<br />
 
+Upon checkout the user can see its order on its profile.<br />
+
+![orders](./images/orders.gif)
+
+## Watif Structure
+
+**Wireframe**
+
+![project wireframe](./images/final-wireframe.png)<br />
+
+**Models**
+
+![models](./images/models.png<br />)
 
 
