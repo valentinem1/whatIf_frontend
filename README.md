@@ -64,5 +64,4 @@ Users are able to sign up/sign in. Upon Sign in users are taken to their profile
 
 ![login gif](./images/login.gif)
 
-![Home Page picture](./images/homepagedemo.jpeg)
 
