@@ -60,8 +60,21 @@ To launch the app you'll have to follow the following steps:
 
 ## Features
 
-Users are able to sign up/sign in. Upon Sign in users are taken to their profile.
+Users can sign up or sign in. Upon Sign in users are taken to their profile and gain access to the add to cart functionality. <br />
 
-![login gif](./images/login.gif)
+![login gif](./images/login.gif)<br />
+
+User is able to see a list of items, sort them by price and click on them to be taken to the item show page.<br />
+
+![home page gif](./images/home-page.gif)<br />
+
+Once on the item show page the user can add the item to their cart if the item is still available. They can also post and delete their reviews.<br />
+
+![item show page](./images/item-show-page.gif)<br />
+
+Once the item is added to the cart the user can see it in their own cart. They can delete it or checkout.<br />
+
+![cart](./images/cart-page.gif)<br />
+
 
 
