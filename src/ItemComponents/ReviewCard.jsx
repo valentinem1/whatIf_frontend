@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Container, Rating } from 'semantic-ui-react'
 
 const ReviewCard = (props) => {
-    console.log(props.review)
     const handleDelete = () => {
         props.deleteReview(props.review.id)
     }
@@ -16,7 +15,7 @@ const ReviewCard = (props) => {
 
     return (
             <Container>
-                <p className="review-username">{props.review.username} - <span className="review-post-time">{props.review.created_at.slice(0, 10)}</span></p>
+                <p className="review-username">{props.review.username} - <span className="review-post-time">{props.review.created_at}</span></p>
                 <Rating className="rating-stars-card" icon='star' defaultRating={props.review.rating} maxRating={5} disabled /> 
                 <p className="review-comment">{props.review.comment} {showDeleteButton()}</p>
             </Container>

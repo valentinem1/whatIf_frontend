@@ -3,7 +3,6 @@ import OrderCard from './OrderCard'
 import { connect } from 'react-redux'
 
 const OrderContainer = (props) => {
-
     if(props.orders){
         let orders = props.orders.reverse().map(order => <OrderCard key={order.order_id} order={order} pathname={props.pathname}/>)
         return (

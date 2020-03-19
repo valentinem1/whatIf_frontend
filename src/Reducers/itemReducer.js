@@ -24,6 +24,7 @@ const itemReducer = (state=initialState, action) => {
 
         case "SEARCH_ITEMS":
             return {...state, search: action.value}
+
         default:
             return state;
     }

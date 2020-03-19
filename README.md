@@ -6,13 +6,15 @@ A `React and Rails` designed as an e-marketplace(Etsy clone) allowing creativity
 ## Technologies
 
 **Front End:** 
-- React
-- React Router - Declarative Routing
-- Redux
-- Semantic UI - A UI component framework for theming websites
+- React [16.12.0]
+- React Router [^5.1.2] - Declarative Routing
+- React Router Dom [^5.1.2] - Declarative Routing
+- Redux [^7.2.0]
+- React Medium Image Zoom [^4.3.0] - Allows images to work together for a “zooming” effect
+- React Stripe Checkout [^2.6.3] - Service that allows users to accept payments online
+- Dotenv [^8.2.0] - A zero-dependency module that loads environment variables
+- Semantic UI [^0.88.2] - A UI component framework for theming websites
 - CSS3 for customization
-- Stripe API - Service that allows users to accept payments online
-- Dotenv - A zero-dependency module that loads environment variables
 
 
 **Back End:** link to [Back End Repository](https://github.com/valentinem1/watif_backend)
@@ -55,6 +57,12 @@ To launch the app you'll have to follow the following steps:
 - Run `npm install` to install all dependencies
 - Run `npm start` to run the server
 - Ensure it is running locally on `http://localhost:3000` to view it in the browser
+
+## Features
+
+Users are able to sign up/sign in. Upon Sign in users are taken to their profile.
+
+![login gif](images/login.gif)
 
 ![Home Page picture](images/homepagedemo.jpeg)
 

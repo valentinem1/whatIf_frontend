@@ -1,8 +1,11 @@
 import React from 'react';
 import { Image, Container, Button, Rating } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { addToCart, increaseCartItemQuantity } from '../Actions/userActions'
+import { addToCart } from '../Actions/userActions'
 import { decreaseItemQuantity } from '../Actions/itemsActions'
+
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 
 const InfoContainer = (props) => {
     
@@ -24,18 +27,8 @@ const InfoContainer = (props) => {
             })
             .then(r => r.json())
             .then(cartItem => {
-                if(props.userCart.length){
-                    let findMatchingItem = props.userCart.find(item => item.item.id === cartItem.item.id)
-                    if(findMatchingItem){
-                        console.log("already in cart")
-                        props.increaseCartItemQuantity(cartItem.item)
-                        props.decreaseItemQuantity(cartItem.item)
-                    }else{
-                        console.log("not in cart")
                         props.addToCart(cartItem)
                         props.decreaseItemQuantity(cartItem.item)
-                    }
-                }
             })
         }
 
@@ -67,7 +60,9 @@ const InfoContainer = (props) => {
             <div className="item-info-card">
                 <Container>
                     <div className="item-image-description-block">
-                        <Image className="item-image" src={item.image} alt="default image"/>
+                        <Zoom className="zoom-image">
+                            <Image className="item-image" src={item.image} alt="default image"/>
+                        </Zoom>
                         <div className="item-info">
                             <h1 className="item-title-header">{item.title}</h1>
                             <div className="average-rating-on-item">
@@ -93,4 +88,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { addToCart, increaseCartItemQuantity, decreaseItemQuantity })(InfoContainer);
+export default connect(mapStateToProps, { addToCart, decreaseItemQuantity })(InfoContainer);

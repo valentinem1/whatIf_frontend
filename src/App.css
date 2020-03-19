@@ -133,20 +133,21 @@ body{
 }
 
 .item-image{
-  width: 40vw !important;
-  height: 100vh !important;
-  margin-left: -4vw !important;
+  width: 300vw !important;
+  height: 80vh !important;
+  margin-left: 0vw !important;
   border-radius: 0.5vw !important;
 }
 
 .item-title-header{
   margin-top: 4vh !important;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif !important;
+  font-size: 1.6vw !important;
 }
 
 .item-info{
   margin-left: 8vw;
-  font-size: 1.4vw;
+  font-size: 1.3vw;
   font-family: "Guardian-EgypTT",serif;
 }
 
