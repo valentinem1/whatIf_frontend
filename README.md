@@ -62,7 +62,7 @@ To launch the app you'll have to follow the following steps:
 
 Users are able to sign up/sign in. Upon Sign in users are taken to their profile.
 
-![login gif](images/login.gif)
+![login gif](./images/login.gif)
 
-![Home Page picture](images/homepagedemo.jpeg)
+![Home Page picture](./images/homepagedemo.jpeg)
 
