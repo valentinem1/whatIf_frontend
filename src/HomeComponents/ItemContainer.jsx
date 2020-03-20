@@ -3,9 +3,9 @@ import ItemCard from './ItemCard'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
 import { Card } from 'semantic-ui-react'
+import { searchItems } from '../Actions/itemsActions'
 
 const ItemContainer = (props) => {
-
     // filter the item depending on the search bar input
     const filterSearch = () => {
         let newArr = props.items.filter(item => {
@@ -27,9 +27,13 @@ const ItemContainer = (props) => {
         }
     }
 
+    const clearSearch = () => {
+        props.searchItems("")
+    }
+
     return(
         <Card.Group className="all-items-container">
-            {filterSearch(sortByPrice()).map(item => <Link key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
+            {filterSearch(sortByPrice()).map(item => <Link onClick={clearSearch} key={item.id} to={`/${item.id}`}><ItemCard  key={item.id} item={item} /></Link>)}
         </Card.Group>
     );
 
@@ -43,4 +47,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(ItemContainer);
+export default connect(mapStateToProps, { searchItems })(ItemContainer);
