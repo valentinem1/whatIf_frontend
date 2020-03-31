@@ -9,6 +9,7 @@ import HomeContainer from './HomeComponents/HomeContainer'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ItemShowContainer from './ItemComponents/ItemShowContainer'
 import CartContainer from './CartComponents/CartContainer'
+import NotFound from './NotFound'
 
 import { connect } from 'react-redux'
 import { fetchItems } from './Actions/itemsActions'
@@ -40,18 +41,15 @@ class App extends Component {
   
   render() {
     return (
-
       <div>
-
         <HeaderContainer historyProps={this.props}/>
 
         <Switch>
           <Route exact path="/" component={ HomeContainer } />
-          <Route exact path="/profile" component={ ProfileContainer } />
-          <Route exact path="/cart" component={ CartContainer } />
+          <Route exact path="/profile" render={localStorage.token ? (routerProps) => <ProfileContainer /> : (routerProps) => <NotFound />} />
+          <Route exact path="/cart" component={ localStorage.token ? (routerProps) => <CartContainer />  : (routerProps) => <NotFound />} />
           <Route path='/:id' component={ ItemShowContainer } />
         </Switch>
-
       </div>
     );
   }

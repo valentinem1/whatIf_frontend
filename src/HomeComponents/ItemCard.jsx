@@ -27,34 +27,9 @@ const ItemCard = (props) => {
                         <h4 className="item-card-price-header">Price:</h4>
                         <p className="item-card-price">${props.item.price}</p>
                     </Card.Content>
-                    {/* <Card.Content extra> */}
-                    {/* </Card.Content> */}
                 </Card>
         );
     }return null
 };
 
 export default ItemCard;
-
-
-
-
-
-
-
-// console.log(props.item.reviews)
-    // Review average add up all the numbers and divide them by the number of ratings
-    // const reviews = (total, num) => {
-    //     return total + num
-    // }
-    // function averageReviews (reviews){
-        //     for(let i=0 ; i < reviews.length; i++) {
-            //         return reviews[i].rating
-            //     }
-            // }
-        // let reviews = props.item.reviews
-
-        // let review = reviews.map(review => review.rating)
-
-        // let average = review.reduce((total, num) => total + num)
-    // const averageReviews = props.item.reviews.length === 0 ? 0 : props.item.reviews.reduce(reviews) / props.item.reviews.length

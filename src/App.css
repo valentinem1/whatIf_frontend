@@ -506,6 +506,34 @@ body{
   font-weight: bold;
 }
 
-.not-found{
-  text-align: center;
+/* not found css */
+.not-found-container{
+  text-align: center !important;
+  background-image: url("https://www.wcde.org/cms/lib/TN02209007/Centricity/ModuleInstance/17305/Homepage%20Background.png");
+  background-size: cover !important;
+  height: 100vh !important;
+  margin-top: -20vh !important;
+}
+
+.not-found-message{
+  text-align: center !important;
+  font-size: 2.5vw !important;
+  margin-left: 30vw !important;
+  margin-right: 30vw !important;
+  padding-top: 40vh !important;
+  margin-bottom: 5vh !important;
+}
+
+.back-home-btn:hover{
+  margin-right: 0.5vw !important;
+  color: #000000 !important;
+}
+
+.back-home-btn{
+  font-size: 1.3vw;
+  color: #000000 !important;
+}
+
+.back-home-arrow{
+  color: #000000 !important;
 }

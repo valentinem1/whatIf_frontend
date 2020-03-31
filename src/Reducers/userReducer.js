@@ -15,7 +15,7 @@ const userReducer = (state=initialState, action) => {
             return {...state}
 
         case "ADD_TO_CART":
-            console.log("state:", state.cart)
+            console.log("state:", state)
             return {...state, cart: [...state.cart, action.cartItem]}
 
         case "REMOVE_FROM_CART":
