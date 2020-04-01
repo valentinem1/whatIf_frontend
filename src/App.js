@@ -46,8 +46,8 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={ HomeContainer } />
-          <Route exact path="/profile" render={localStorage.token ? (routerProps) => <ProfileContainer /> : (routerProps) => <NotFound />} />
-          <Route exact path="/cart" component={ localStorage.token ? (routerProps) => <CartContainer />  : (routerProps) => <NotFound />} />
+          <Route exact path="/profile" render={localStorage.token ? (routerProps) => <ProfileContainer routerProps={routerProps}/> : (routerProps) => <NotFound />} />
+          <Route exact path="/cart" component={ localStorage.token ? (routerProps) => <CartContainer routerProps={routerProps}/>  : (routerProps) => <NotFound />} />
           <Route path='/:id' component={ ItemShowContainer } />
         </Switch>
       </div>

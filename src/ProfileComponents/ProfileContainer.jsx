@@ -19,14 +19,15 @@ const ProfileContainer = (props) => {
         })
     }
 
-        return (
-            <div>
-                <ProfileCard />
-                <Button className="delete-profile-btn" onClick={handleDelete}>Delete Profile</Button>
-                <hr className="profile-order-separation"/>
-                <OrderContainer pathname={props.match.path}/>
-            </div>
-        );
+    console.log(props)
+    return (
+        <div>
+            <ProfileCard />
+            <Button className="delete-profile-btn" onClick={handleDelete}>Delete Profile</Button>
+            <hr className="profile-order-separation"/>
+            <OrderContainer pathname={props.routerProps.match.path}/>
+        </div>
+    );
 }
 
 const mapStateToProps = (state) => {

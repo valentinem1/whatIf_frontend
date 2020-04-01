@@ -12,11 +12,9 @@ class HeaderContainer extends Component {
 
     render() {
         return (
-
             <div>
             <Segment className="logo">
                 <Header><Link to="/"><i className="watif-logo">Watif</i></Link></Header>
-                
                         {localStorage.token ? 
                         <Header className="logged-in-menu-header">
                         <Menu className="logged-in-menu-bar">
@@ -42,9 +40,7 @@ class HeaderContainer extends Component {
                         </Header>
                         }
             </Segment>
-                
             </div>
-
         );
     }
 }

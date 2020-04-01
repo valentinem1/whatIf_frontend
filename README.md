@@ -1,7 +1,8 @@
 <h1 align="center">Watif 👜 ⌚️</h1>
 
-A `React and Rails` website designed as an e-marketplace(Etsy clone) allowing creativity and uniqueness in products from handmade to vintage items and craft supplies.
+A `React and Rails` website designed as an e-marketplace(Etsy clone) allowing creativity and uniqueness in products from handmade to vintage items and craft supplies.<br/>
 
+***Link to [Demo](https://www.youtube.com/watch?v=DtVUKqseap8)***<br/>
 
 ## Technologies
 
@@ -67,7 +68,7 @@ Users can sign up or sign in. Upon Sign in users are taken to their profile and 
 
 ![login gif](./images/login.gif)<br />
 
-User is able to see a list of items, sort them by price and click on them to be taken to the item show page.<br />
+User is able to see a list of items, sort them by price and click on them to be taken to the item's show page.<br />
 
 ![home page gif](./images/home-page.gif)<br />
 

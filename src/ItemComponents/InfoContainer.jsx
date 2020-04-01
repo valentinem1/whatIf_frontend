@@ -9,28 +9,28 @@ import 'react-medium-image-zoom/dist/styles.css'
 
 const InfoContainer = (props) => {
     
-        const item_id = parseInt(props.matchProps.params.id)
-        // find the item from the url that matches the item in the store to display all its information on its show page
-        let item = props.items ? props.items.find(item => item.id === item_id) : null
-        
-        // fetches item to the cart once clicking on add to cart button
-        const fetchToCart = () => {
-            fetch('http://localhost:4000/cart_joiners', {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                    "Authorization": `bearer ${localStorage.token}`
-                },
-                body: JSON.stringify({
-                    item_id
-                })
+    const item_id = parseInt(props.matchProps.params.id)
+    // find the item from the url that matches the item in the store to display all its information on its show page
+    let item = props.items ? props.items.find(item => item.id === item_id) : null
+    
+    // fetches item to the cart once clicking on add to cart button
+    const fetchToCart = () => {
+        fetch('http://localhost:4000/cart_joiners', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "Authorization": `bearer ${localStorage.token}`
+            },
+            body: JSON.stringify({
+                item_id
             })
-            .then(r => r.json())
-            .then(cartItem => {
-                        props.addToCart(cartItem)
-                        props.decreaseItemQuantity(cartItem.item)
-            })
-        }
+        })
+        .then(r => r.json())
+        .then(cartItem => {
+                    props.addToCart(cartItem)
+                    props.decreaseItemQuantity(cartItem.item)
+        })
+    }
 
 
     if(item){

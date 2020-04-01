@@ -336,7 +336,7 @@ body{
 .ui.active.modal{
     display: block;
     width: 28vw;
-    height: 100vh;
+    height: 95vh;
 }
 
 .login-signup-header{
@@ -387,7 +387,7 @@ body{
   display: flex;
   align-items: center;
   margin-left: 2vw;
-  margin-top: 8vh;
+  margin-top: 5vh;
 }
 
 .have-account-title{
@@ -411,7 +411,7 @@ body{
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   font-size: 1.1vw;
   text-align: center;
-  color: #C13C27;;
+  color: #C13C27;
 }
 
 /* cart items css */
