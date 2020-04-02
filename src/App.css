@@ -537,3 +537,43 @@ body{
 .back-home-arrow{
   color: #000000 !important;
 }
+
+/* footer container css */
+.footer-container{
+  /* margin-bottom: 8vh; */
+  background-image: url('https://theartmad.com/wp-content/uploads/2015/02/Blue-Geometric-Background-3.jpg');
+  background-size: cover !important;
+  height: 18vh !important;
+
+}
+
+.footer-logo-container{
+  display: flex;
+  align-items: center;
+  margin-top: 20vh;
+  margin-bottom: 1.5vh;
+}
+
+.footer-title{
+  margin-top: 4vh !important;
+  margin-left: 10vw !important;
+  letter-spacing: 0.1vw !important;
+  font-family: 'Times New Roman', Times, serif !important;
+  font-weight: bold !important;
+  font-size: 1.6vw !important;
+  color: #ffffff !important;
+  font-style: italic;
+}
+
+.footer-certified-logo{
+  margin-left: 10vw;
+  color: #e4e4e4;
+  font-size: 0.8vw;
+}
+
+.footer-website-rights{
+  margin-left: 10vw;
+  color: #e4e4e4;
+  font-size: 0.8vw;
+  margin-right: 5vw;
+}

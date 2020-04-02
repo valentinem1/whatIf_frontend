@@ -10,6 +10,7 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ItemShowContainer from './ItemComponents/ItemShowContainer'
 import CartContainer from './CartComponents/CartContainer'
 import NotFound from './NotFound'
+import Footer from './Footer'
 
 import { connect } from 'react-redux'
 import { fetchItems } from './Actions/itemsActions'
@@ -50,6 +51,8 @@ class App extends Component {
           <Route exact path="/cart" component={ localStorage.token ? (routerProps) => <CartContainer routerProps={routerProps}/>  : (routerProps) => <NotFound />} />
           <Route path='/:id' component={ ItemShowContainer } />
         </Switch>
+
+        <Footer />
       </div>
     );
   }
