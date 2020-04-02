@@ -28,7 +28,7 @@ class ReviewForm extends Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
+            <Form hidden={localStorage.token ? false : true} onSubmit={this.handleSubmit}>
                 <Form.TextArea
                     label='Leave a review here'
                     placeholder="Write your thoughts"

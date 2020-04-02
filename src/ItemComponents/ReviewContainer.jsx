@@ -48,11 +48,12 @@ const ReviewContainer = (props) => {
 
         let reviewItem = props.reviews.filter(review => review.item_id === parseInt(props.matchProps.params.id))
         let reviews = reviewItem.map(review => <ReviewCard key={review.id} review={review} deleteReview={deleteReview} />)
-
+    // console.log(reviews)
         return (
             <div>
                 <Container>
                     <Header className="review-header">Reviews for this item:</Header> 
+                    <p className="no-reviews" hidden={reviews.length <= 0 ? false : true}>There is no reviews yet. Be the first one!</p>
                     {reviews}
                     <ReviewForm createReview={createReview} />
                 </Container>
