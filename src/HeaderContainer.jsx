@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom"
 import { Segment, Header, Menu, Icon, Modal } from 'semantic-ui-react'
 import LoginSignupForm from './LoginSignupForm'
+import { connect } from 'react-redux'
+import { loginError } from './Actions/loginErrorsActions'
 
 class HeaderContainer extends Component {
 
     logOutUser = () => {
         localStorage.clear()
         this.props.historyProps.history.push("/")
+    }
+
+    clearError = () => {
+
+    this.props.loginError("") 
     }
 
     render() {
@@ -32,7 +39,7 @@ class HeaderContainer extends Component {
                         <Header className="signup-menu-bar">
                         <Menu>
                         <Menu.Item>
-                        <Modal trigger={<p className="sign-in">Sign in</p>}>
+                        <Modal onClick={this.clearError} trigger={<p className="sign-in">Sign in</p>}>
                             <LoginSignupForm history={this.props.historyProps.history}/>
                         </Modal>
                         </Menu.Item>
@@ -45,4 +52,4 @@ class HeaderContainer extends Component {
     }
 }
 
-export default HeaderContainer;
+export default connect(null, { loginError })(HeaderContainer);

@@ -32,6 +32,8 @@ class LoginSignupForm extends Component {
                     display: !prevState.display
                 }
             })
+
+            this.props.loginError("")
         }
 
     return ( 
