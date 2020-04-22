@@ -13,8 +13,7 @@ class HeaderContainer extends Component {
     }
 
     clearError = () => {
-
-    this.props.loginError("") 
+        this.props.loginError("") 
     }
 
     render() {
@@ -39,7 +38,7 @@ class HeaderContainer extends Component {
                         <Header className="signup-menu-bar">
                         <Menu>
                         <Menu.Item>
-                        <Modal onClick={this.clearError} trigger={<p className="sign-in">Sign in</p>}>
+                        <Modal  trigger={<p onClick={this.clearError} className="sign-in">Sign in</p>}>
                             <LoginSignupForm history={this.props.historyProps.history}/>
                         </Modal>
                         </Menu.Item>
