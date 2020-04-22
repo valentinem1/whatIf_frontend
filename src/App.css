@@ -547,7 +547,6 @@ body{
 
 /* footer container css */
 .footer-container{
-  /* margin-bottom: 8vh; */
   background-image: url('https://theartmad.com/wp-content/uploads/2015/02/Blue-Geometric-Background-3.jpg');
   background-size: cover !important;
   height: 18vh !important;
@@ -557,7 +556,7 @@ body{
 .footer-logo-container{
   display: flex;
   align-items: center;
-  margin-top: 20vh;
+  margin-top: 28vh;
   margin-bottom: 1.5vh;
 }
 

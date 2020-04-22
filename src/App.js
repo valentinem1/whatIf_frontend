@@ -19,14 +19,14 @@ import { userPersist } from './Actions/userActions'
 class App extends Component {
 
   componentDidMount() {
-    fetch('http://localhost:4000/items')
+    fetch('https://watif-app-api.herokuapp.com/items')
     .then(r => r.json())
     .then(itemsData => {
       this.props.fetchItems(itemsData)
     })
 
     if(localStorage.token){
-      fetch('http://localhost:4000/persist', {
+      fetch('https://watif-app-api.herokuapp.com/persist', {
         headers: {
           "Authorization": `bearer ${localStorage.token}`
         }

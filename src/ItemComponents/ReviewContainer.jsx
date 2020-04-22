@@ -9,7 +9,7 @@ import { addReview, fetchReviews, destroyReview } from '../Actions/reviewActions
 const ReviewContainer = (props) => {
 
     useEffect(() => { 
-        fetch("http://localhost:4000/reviews")
+        fetch("https://watif-app-api.herokuapp.com/reviews")
             .then(r => r.json())
             .then(reviewsArr => {
                 props.fetchReviews(reviewsArr)
@@ -17,7 +17,7 @@ const ReviewContainer = (props) => {
     }, [])
 
     const createReview = (newReview) => {
-        fetch('http://localhost:4000/reviews', {
+        fetch('https://watif-app-api.herokuapp.com/reviews', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -37,7 +37,7 @@ const ReviewContainer = (props) => {
 
     const deleteReview = (reviewId) => {
         
-        fetch(`http://localhost:4000/reviews/${reviewId}`, {
+        fetch(`https://watif-app-api.herokuapp.com/reviews/${reviewId}`, {
             method: "DELETE"
         })
         .then(r => r.json())

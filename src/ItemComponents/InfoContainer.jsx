@@ -15,7 +15,7 @@ const InfoContainer = (props) => {
     
     // fetches item to the cart once clicking on add to cart button
     const fetchToCart = () => {
-        fetch('http://localhost:4000/cart_joiners', {
+        fetch('https://watif-app-api.herokuapp.com/cart_joiners', {
             method: "POST",
             headers: {
                 "content-type": "application/json",

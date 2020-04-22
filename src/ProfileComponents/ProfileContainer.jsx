@@ -8,7 +8,7 @@ import { deleteUser } from '../Actions/userActions'
 const ProfileContainer = (props) => {
 
     const handleDelete = () => {
-        fetch(`http://localhost:4000/users/${props.user.id}`, {
+        fetch(`https://watif-app-api.herokuapp.com/users/${props.user.id}`, {
             method: "DELETE"
         })
         .then(r => r.json())
@@ -19,7 +19,6 @@ const ProfileContainer = (props) => {
         })
     }
 
-    console.log(props)
     return (
         <div>
             <ProfileCard />
