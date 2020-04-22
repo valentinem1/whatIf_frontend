@@ -10,7 +10,7 @@ const ItemInfoCard = (props) => {
     const removeItemFromCart = () => {
         let cart_joiner_id = props.cart_joiner
 
-        fetch(`https://watif-app-api.herokuapp.com/cart_joiners/${cart_joiner_id}`, {
+        fetch(`https://watif-app-api.herokuapp.com/${cart_joiner_id}`, {
             method: "DELETE"
         })
         .then(r => r.json())

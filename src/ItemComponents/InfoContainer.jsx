@@ -61,7 +61,7 @@ const InfoContainer = (props) => {
                 <Container>
                     <div className="item-image-description-block">
                         <Zoom className="zoom-image">
-                            <Image className="item-image" src={item.image} alt="default image"/>
+                            {/* <Image className="item-image" src={item.image} alt="default image"/> */}
                         </Zoom>
                         <div className="item-info">
                             <h1 className="item-title-header">{item.title}</h1>
