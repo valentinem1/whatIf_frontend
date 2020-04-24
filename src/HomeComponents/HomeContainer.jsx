@@ -5,7 +5,7 @@ import FilterItemsContainer from './FilterItemsContainer'
 import SearchForm from './SearchForm'
 
 class HomeContainer extends Component {
-
+    // render search form, item containers, and the filter bar
     render() {
         return (
             <div>

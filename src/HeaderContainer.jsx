@@ -7,12 +7,17 @@ import { loginError } from './Actions/loginErrorsActions'
 
 class HeaderContainer extends Component {
 
+    // function that get triggered by clicking on the log out icon and log out the user.
     logOutUser = () => {
+        //clear localStorage which clears the token and then log out the user since no token are there anymore.
         localStorage.clear()
+        // after being logged out the user get redirected to the home page by using the history props which allows to push to a different url path.
         this.props.historyProps.history.push("/")
     }
 
+    // gets triggered when clicking on the sign-in button. It clears the logging errors.
     clearError = () => {
+        // set the loggin error to an empty string to the state by calling the loginError action which will trigger the store to call the reducer to change the state.
         this.props.loginError("") 
     }
 
@@ -21,6 +26,7 @@ class HeaderContainer extends Component {
             <div>
             <Segment className="logo">
                 <Header><Link to="/"><i className="watif-logo">Watif</i></Link></Header>
+                {/* check if the user is logged in by checking a token exist. If it exist it will show the profile, cart and log out buttons. */}
                         {localStorage.token ? 
                         <Header className="logged-in-menu-header">
                         <Menu className="logged-in-menu-bar">
@@ -35,6 +41,7 @@ class HeaderContainer extends Component {
                         </Menu.Item>
                         </Menu>
                         </Header> : 
+                        // If the token doesn't exist It will show the Sign in button.
                         <Header className="signup-menu-bar">
                         <Menu>
                         <Menu.Item>
@@ -50,5 +57,5 @@ class HeaderContainer extends Component {
         );
     }
 }
-
+// connect, connects the component with redux to provide the piece of data needed from the store.
 export default connect(null, { loginError })(HeaderContainer);
