@@ -43,11 +43,11 @@ const CheckoutCard = (props) => {
                 })
             };
 
-            fetch('http://localhost:4000/charges', config)
+            fetch('https://watif-app-api.herokuapp.com/charges', config)
             .then(res => res.json())
             // .then(console.log)
 
-            fetch('http://localhost:4000/order_joiners', {
+            fetch('https://watif-app-api.herokuapp.com/order_joiners', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",

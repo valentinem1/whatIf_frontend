@@ -188,7 +188,7 @@ class LoginSignupForm extends Component {
         event.preventDefault()
 
         let { first_name, last_name, username, address, email, picture, password } = this.state
-            fetch(`http://localhost:4000/${this.state.display ? "login" : "users"}`, {
+            fetch(`https://watif-app-api.herokuapp.com/${this.state.display ? "login" : "users"}`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
