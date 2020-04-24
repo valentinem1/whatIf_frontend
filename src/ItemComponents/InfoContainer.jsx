@@ -15,7 +15,7 @@ const InfoContainer = (props) => {
     
     // fetches item to the cart once clicking on add to cart button
     const fetchToCart = () => {
-        fetch('https://watif-app-api.herokuapp.com/cart_joiners', {
+        fetch('http://localhost:4000/cart_joiners', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -61,7 +61,7 @@ const InfoContainer = (props) => {
                 <Container>
                     <div className="item-image-description-block">
                         <Zoom className="zoom-image">
-                            {/* <Image className="item-image" src={item.image} alt="default image"/> */}
+                            <Image className="item-image" src={item.image} alt="default image"/>
                         </Zoom>
                         <div className="item-info">
                             <h1 className="item-title-header">{item.title}</h1>
