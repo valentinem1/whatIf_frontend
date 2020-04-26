@@ -30,9 +30,9 @@ const InfoContainer = (props) => {
         .then(cartItem => {
             // cart_joiner instance get sent back
             // add the cart_joiner instance to the state by calling the addToCart action which will trigger the store to call the reducer to change the state. Pass it the instance of the cart_joiner as argument.
-                    props.addToCart(cartItem)
+            props.addToCart(cartItem)
             // add the new item quantity sent back from the back end to the state by calling the decreaseItemQuantity action which will trigger the store to call the reducer to change the state. Pass it the item with the new quantity updated in the back end as argument.
-                    props.decreaseItemQuantity(cartItem.item)
+            props.decreaseItemQuantity(cartItem.item)
         })
     }
 

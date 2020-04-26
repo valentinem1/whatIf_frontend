@@ -7,7 +7,9 @@ import { increaseItemQuantity } from '../Actions/itemsActions'
 
 const ItemInfoCard = (props) => {
 
+    // get called when clicking remove from cart button.
     const removeItemFromCart = () => {
+        // save the cart_joiner id in variable to use it in dynamic fetch url.
         let cart_joiner_id = props.cart_joiner
 
         fetch(`https://watif-app-api.herokuapp.com/cart_joiners/${cart_joiner_id}`, {
@@ -15,7 +17,10 @@ const ItemInfoCard = (props) => {
         })
         .then(r => r.json())
         .then(deletedItem => {
+            // deleted item get sent back
+            // add the new item quantity sent back from the back end to the state by calling the increaseQuantity action which will trigger the store to call the reducer to change the state. Pass it the item with the new quantity updated in the back end as argument.
             props.increaseItemQuantity(deletedItem.item)
+            // send the deleted cart_joiner to the state by calling the removeFromCart action which will trigger the store to call the reducer to change the state. Pass it the deleted item as argument.
             props.removeFromCart(deletedItem)
         })
     }
@@ -43,7 +48,6 @@ const ItemInfoCard = (props) => {
                     <div className="cart-item-info">
                         <Link to={`/${props.item.id}`}><h3 className="order-item-title">{props.item.title}</h3></Link>
                         <p className="cart-item-price">Price: ${props.item.price}</p>
-                        {/* <p>Quantity: {props.cart_joiner_quantity}</p> */}
                         <Button className="remove-from-cart-btn" size='small' onClick={removeItemFromCart}>Remove</Button>
                     </div>
                 </div>
@@ -55,10 +59,12 @@ const ItemInfoCard = (props) => {
 
 };
 
+// Any time the store is updated, mapStateToProps will be called. The results of mapStateToProps will be merged into the wrapped component’s props.
 const mapStateToProps = (state) => {
     return{
         userCart: state.user.cart
     }
 }
 
+// connect, connects the component with redux to provide the piece of data needed from the store. The first argument of connect must be the function that merge the state to the component's props like mapStateToProps, second argument like { removeFromCart, increaseItemQuantity } an ES6 destructuring feature must be the function(s) that dispatches the actions to the store.
 export default connect(mapStateToProps, { removeFromCart, increaseItemQuantity })(ItemInfoCard);

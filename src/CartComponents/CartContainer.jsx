@@ -5,6 +5,7 @@ import CheckoutCardContainer from './CheckoutCard'
 
 import { Divider, Grid, Segment } from 'semantic-ui-react'
 
+// display the cart component
 const CartContainer = () => {
     return (
         <Segment className="checkout-container">
