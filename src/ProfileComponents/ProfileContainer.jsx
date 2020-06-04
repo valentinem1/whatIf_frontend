@@ -10,7 +10,7 @@ const ProfileContainer = (props) => {
     // called when clicking on delete button. Will fetch to the back end with the deleted user. 
     const handleDelete = () => {
         // dynanmic routing with the user id.
-        fetch(`https://watif-app-api.herokuapp.com/users/${props.user.id}`, {
+        fetch(`https://watif-api.herokuapp.com/users/${props.user.id}`, {
             method: "DELETE"
         })
         .then(r => r.json())

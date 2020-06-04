@@ -21,7 +21,7 @@ class App extends Component {
   // It gets called after render() method is called.
   // Allows to fetch data from api to change the state.
   componentDidMount() {
-    fetch('https://watif-app-api.herokuapp.com/items')
+    fetch('https://watif-api.herokuapp.com/items')
     .then(r => r.json())
     // get response from backend with all the items.
     .then(itemsData => {
@@ -33,7 +33,7 @@ class App extends Component {
     // if yes it means someone is logged in and need to persist on the page if refresh or leave the page.
     if(localStorage.token){
       // then fetch to the backend to persist the user who's logged in.
-      fetch('https://watif-app-api.herokuapp.com/persist', {
+      fetch('https://watif-api.herokuapp.com/persist', {
         headers: {
           // by passing the token in the headers the backend gets access to it set the user token and encode(script it) it. A token get assigned at each sign-in/sign-up.
           "Authorization": `bearer ${localStorage.token}`

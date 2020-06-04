@@ -11,7 +11,7 @@ const ReviewContainer = (props) => {
     // perform like componentDidMount() it will be called after the component is mounted and the DOM renders the html. Allows to perform API calls and change the state.
     useEffect(() => { 
         // fetching the reviews from the back end. We give the useEffect an empty array as second argument to run only when the component initialize. It copies the functionalities of componentDidMount().
-        fetch("https://watif-app-api.herokuapp.com/reviews")
+        fetch("https://watif-api.herokuapp.com/reviews")
             .then(r => r.json())
             .then(reviewsArr => {
                 // reviews array get sent back as a response.
@@ -22,7 +22,7 @@ const ReviewContainer = (props) => {
 
     // fetch new review to the reviews once clicking on submit review.
     const createReview = (newReview) => {
-        fetch('https://watif-app-api.herokuapp.com/reviews', {
+        fetch('https://watif-api.herokuapp.com/reviews', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -46,7 +46,7 @@ const ReviewContainer = (props) => {
     // fetch the review to the review to get deleted once clicking the delete button.
     const deleteReview = (reviewId) => {
         // in the url we pass the review id that get sent from the review card that clicked to delete.
-        fetch(`https://watif-app-api.herokuapp.com/reviews/${reviewId}`, {
+        fetch(`https://watif-api.herokuapp.com/reviews/${reviewId}`, {
             method: "DELETE"
         })
         .then(r => r.json())

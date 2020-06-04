@@ -200,7 +200,7 @@ class LoginSignupForm extends Component {
         let { first_name, last_name, username, address, email, picture, password } = this.state
 
         // fetching to back end to either login to log the user or users to create a user. It depend on what card is display sign-u or log-in
-            fetch(`https://watif-app-api.herokuapp.com/${this.state.display ? "login" : "users"}`, {
+            fetch(`https://watif-api.herokuapp.com/${this.state.display ? "login" : "users"}`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

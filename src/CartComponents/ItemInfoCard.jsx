@@ -12,7 +12,7 @@ const ItemInfoCard = (props) => {
         // save the cart_joiner id in variable to use it in dynamic fetch url.
         let cart_joiner_id = props.cart_joiner
 
-        fetch(`https://watif-app-api.herokuapp.com/cart_joiners/${cart_joiner_id}`, {
+        fetch(`https://watif-api.herokuapp.com/cart_joiners/${cart_joiner_id}`, {
             method: "DELETE"
         })
         .then(r => r.json())

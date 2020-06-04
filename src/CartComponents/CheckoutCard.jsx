@@ -55,11 +55,11 @@ const CheckoutCard = (props) => {
             };
 
             // fetch to the charge controller which handles the Stripe API transaction.
-            fetch('https://watif-app-api.herokuapp.com/charges', config)
+            fetch('https://watif-api.herokuapp.com/charges', config)
             .then(res => res.json())
 
             // fetch the order_joiner to create the order when checking out.
-            fetch('https://watif-app-api.herokuapp.com/order_joiners', {
+            fetch('https://watif-api.herokuapp.com/order_joiners', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
