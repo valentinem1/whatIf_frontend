@@ -7,7 +7,7 @@ const ItemCard = (props) => {
         // check if the item exist. this checking handles the asynchronous functionality of react.
         if(props.item){
             // slices the title to a length of 35 characters.
-           return <> {props.item.title.slice(0, 35)}{props.item.title.length > 30 ? "..." : null } </>
+            return <> {props.item.title.slice(0, 35)}{props.item.title.length > 30 ? "..." : null } </>
         }else{
             // if doesn't exist returns null.
             return null

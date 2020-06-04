@@ -20,6 +20,7 @@ const FilterItemsContainer = (props) => {
                         <Form.Input
                             className="sort-input-field"
                             checked={props.sortValue === "All"} // the state control the form through the checked from the state.
+                            type="radio"
                             name="All"
                             value="All"
                             onChange={handleAllPrice} // the form controls the state with every input dynamically changing the state with the handleAllPrice function.
