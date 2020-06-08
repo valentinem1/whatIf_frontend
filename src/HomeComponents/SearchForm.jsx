@@ -7,7 +7,7 @@ const SearchForm = (props) => {
 
     // Gets called every time a change is made in the search form. It makes the form dynamic and allows to dynamically set the state.
     const handleChange = (event) => {
-        // set the search value to the input from the search to the state by calling the loginError action which will trigger the store to call the reducer to change the state. 
+        // set the search value to the input from the search form to the state by calling the searchItems action which will trigger the store to call the reducer to change the state. 
         props.searchItems(event.target.value)
     }
 

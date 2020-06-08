@@ -29,7 +29,7 @@ class App extends Component {
       this.props.fetchItems(itemsData)
     })
 
-    // check if localStorage has a taken
+    // check if localStorage has a token
     // if yes it means someone is logged in and need to persist on the page if refresh or leave the page.
     if(localStorage.token){
       // then fetch to the backend to persist the user who's logged in.
@@ -51,7 +51,7 @@ class App extends Component {
   }
   // gets call first to mount the component to the dom and render the html.
   render() {
-    // allows has to return something. If no html there null will work.
+    // allows to return something. If no html there null will work.
     return (
       <div>
         {/* App.js get access to many props especially the history which allows to get access to the url pathname etc... */}
@@ -72,4 +72,5 @@ class App extends Component {
   }
 }
 
+// withRouter gives acces to the history props to the component wrapped in (). In that situation App.js.
 export default connect(null, { fetchItems, userPersist })(withRouter(App));

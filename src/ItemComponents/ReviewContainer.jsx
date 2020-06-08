@@ -43,27 +43,27 @@ const ReviewContainer = (props) => {
         })
     }
 
-    // fetch the review to the review to get deleted once clicking the delete button.
+    // fetch the review to get deleted once clicking the delete button.
     const deleteReview = (reviewId) => {
-        // in the url we pass the review id that get sent from the review card that clicked to delete.
+        // in the url we pass the review id that get sent from the review card that was clicked to be deleted.
         fetch(`https://watif-api.herokuapp.com/reviews/${reviewId}`, {
             method: "DELETE"
         })
         .then(r => r.json())
         .then(deletedReview => {
             // the review instance that has been deleted get sent back as a response.
-            // sent the deleted review to the state by calling the destroyReview action which will trigger the store to call the reducer to change the state. Pass it as argument the review instance. It will get filtered out in the reducer to remove it.
+            // send the deleted review to the state by calling the destroyReview action which will trigger the store to call the reducer to change the state. Pass it as argument the review instance. It will get filtered out in the reducer to remove it.
             props.destroyReview(deletedReview.review)
         })
     }
 
-        // filters out only the reviews that belongs the item displayed on the page.
+        // filters out only the reviews that belongs to the item displayed on the page.
         // check if the item_id on the review equals to the item id from the dynamic url(params).
         // it will return an array of reviews that belong to the item.
         let reviewItem = props.reviews.filter(review => review.item_id === parseInt(props.matchProps.params.id))
         // mapping over the reviews array to display a review card for each of them.
         let reviews = reviewItem.map(review => <ReviewCard key={review.id} review={review} deleteReview={deleteReview} />)
-    // console.log(reviews)
+
         return (
             <div>
                 <Container>

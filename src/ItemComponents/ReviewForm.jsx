@@ -12,10 +12,11 @@ class ReviewForm extends Component {
     // Gets called every time a change is made in the form. It makes the form dynamic and allows to dynamically set the state.
     // second argument rating give us access to the value of the rating input.
     handleChange = (event, { rating }) => {
+        // console.log(rating);
         let {name, value} = event.target
 
         this.setState({
-            // Instead of having to tap each key value pairs from the state it dynamically assign it.
+            // Instead of having to tap each key value pairs from the state it dynamically assigns it.
             [name]: value,
             rating
         })
@@ -25,9 +26,8 @@ class ReviewForm extends Component {
     handleSubmit = (event) => {
         // prevent the browser from refreshing when submitting the form.
         event.preventDefault()
-        //calls the createReview function from ReviewContainer with the entire state which is all the values for the review to create.
+        // calls the createReview function from ReviewContainer with the entire state which is all the values for the review to create.
         this.props.createReview(this.state)
-
         // then reset the state to be empty. It clears out the form input field and the rating.
         this.setState({
             comment: "",
@@ -48,7 +48,8 @@ class ReviewForm extends Component {
                 <Rating
                     name="rating"
                     onRate={this.handleChange}
-                    icon="star" 
+                    icon="star"
+                    defaultRating={0} 
                     maxRating={5} 
                     clearable
                 />

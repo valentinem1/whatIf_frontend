@@ -55,7 +55,7 @@ const InfoContainer = (props) => {
             }
         }
 
-        // calculates the number of ratings of an item
+        // calculates the number of ratings for an item
         const ratingArray = () => {
             // check if the array of reviews is empty
             // if yes return 0
@@ -87,14 +87,14 @@ const InfoContainer = (props) => {
                             <p className="item-price">Price: ${item.price}</p>
                             <p className="item-quantity-left">Quantity: {item.quantity} left</p>
                             <br/>
-                            {item.quantity < 1 ? <Button disabled className="add-to-cart-btn">Sold out</Button> : <Button className="add-to-cart-btn" disabled={localStorage.token ? false : true}onClick={fetchToCart}>Add to cart</Button>}
+                            {item.quantity < 1 ? <Button disabled className="add-to-cart-btn">Sold out</Button> : <Button className="add-to-cart-btn" disabled={localStorage.token ? false : true} onClick={fetchToCart}>Add to cart</Button>}
                         </div>
                     </div>
                 </Container>
             </div>
             )
         }return null
-    }
+}
 
 // Any time the store is updated, mapStateToProps will be called. The results of mapStateToProps will be merged into the wrapped component’s props.
 const mapStateToProps = (state) => {

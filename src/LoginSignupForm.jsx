@@ -29,7 +29,7 @@ class LoginSignupForm extends Component {
 
     // renders the form
     renderFormFields = () => {
-        // gets triggered when clicking on sign-up or log-in. Allows to make the component reusable.
+        // gets triggered when clicking on sign-up or log-in buttons. Allows to make the component reusable.
         const showSignUp = () => {
             // changes the state to opposite when triggered. Allows to display the sign-up or log-in form only when clicking on log-in or sign-up.
             this.setState(prevState => {
@@ -43,7 +43,7 @@ class LoginSignupForm extends Component {
 
     return ( 
         <>
-        {/* check if display is true in state then sho the sign-in card otherwise show the sign-up card. */}
+        {/* check if display is true in state then show the sign-in card otherwise show the sign-up card. */}
         {this.state.display ?
         <>
         <Modal.Header className="login-signup-header">Sign in</Modal.Header>
@@ -176,7 +176,7 @@ class LoginSignupForm extends Component {
                     onChange={this.handleChange} // the form controls the state with every input dynamically changing the state with the handleChange function.
                 />
             </Form.Field>
-            {/* displays logging errors if user doesn't fill up every i */}
+            {/* displays logging errors if user doesn't fill up every input fields */}
             <p className="invalid-logins">{this.props.error.errors}</p> 
         </Modal.Description>
         <Form.Field className="login-signup-submit-btn" color="blue" control={Button}>Sign up</Form.Field>
@@ -199,7 +199,7 @@ class LoginSignupForm extends Component {
         // destructuring the state using ES6 destructuring feature
         let { first_name, last_name, username, address, email, picture, password } = this.state
 
-        // fetching to back end to either login to log the user or users to create a user. It depend on what card is display sign-u or log-in
+        // fetching to back end to either login to log the user or users to create a user. It depend on what card is display sign-up or log-in
             fetch(`https://watif-api.herokuapp.com/${this.state.display ? "login" : "users"}`, {
                 method: "POST",
                 headers: {

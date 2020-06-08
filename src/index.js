@@ -11,11 +11,12 @@ import rootReducer from './Reducers/rootReducer'
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
-<Provider store={store} >
-    {/* allows routing in the App. */}
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
-</Provider>,
-document.getElementById('root')
+    // The <Provider /> makes the Redux store available to any nested components that have been wrapped in the connect() function.
+    <Provider store={store} >
+        {/* allows routing in the App. */}
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>,
+    document.getElementById('root')
 );
