@@ -35,18 +35,18 @@ const ItemContainer = (props) => {
         }
     }
 
-    // gets triggered once clicking on an item card. 
-    const clearSearch = () => {
-        // set the search value to an empty string to the state by calling the searchItems action which will trigger the store to call the reducer to change the state.
-        // It allos to clear the state to an empty string so if the customer goes back to the home page it will show all the items and not only the one that has been searched.
-        props.searchItems("")
-    }
+    // // gets triggered once clicking on an item card. 
+    // const clearSearch = () => {
+    //     // set the search value to an empty string to the state by calling the searchItems action which will trigger the store to call the reducer to change the state.
+    //     // It allos to clear the state to an empty string so if the customer goes back to the home page it will show all the items and not only the one that has been searched.
+    //     props.searchItems("")
+    // }
 
     return(
         // displays a group of card using Semantic UI component.
         <Card.Group className="all-items-container">
             {/* by iterating over the filter or search values it allows to reduce the display of items card depending of the filter or search value as well as all the items if theses search/filter values are empty. */}
-            {filterSearch(sortByPrice()).map(item => <Link onClick={clearSearch} key={item.id} to={`/${item.id}`}><ItemCard key={item.id} item={item} /></Link>)}
+            {filterSearch(sortByPrice()).map(item => <ItemCard key={item.id}  />)}
         </Card.Group>
     );
 
