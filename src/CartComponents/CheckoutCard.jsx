@@ -16,66 +16,64 @@ const CheckoutCard = (props) => {
             return totalPrice
         }
     }
+    console.log(props.userCart)
 
     // assign the function to a variable to be able to add it. can't add a function with numbers.
-    let total = cartTotalPrice()
-    // add the total of prices from the above function with the shipping price. check if the total is bigger than 20.
-    // if yes the shipping will be 10 otherwise 5.
-    let totalWithShipping = total + (total >= 20 ? 10 : 5)
+    let total = cartTotalPrice();
+    // add the total of prices from the above function with the shipping price. check if the total is bigger than $20.
+    // if yes the shipping will be $10 otherwise $0.
+    let totalWithShipping = total + (total >= 20 ? 10 : 0);
 
     // calculate the total of item in the cart.
     const cartTotalItem = () => {
         // check if the cart exist. due to asynchronous functionality of react an if statement is needed to check if the data has arrived yet to be able to use the .length method on it.
         if(props.userCart){
-            let item = props.userCart.length
-            return item
-        }else{
-            return null
+            return props.userCart.length
         }
+    }
+
+    const checkOutMessage = () => {
+        alert("The credit card number must be 4242 4242 4242 4242. It's the test number for the Stripe API. Please do not enter a really credit card number. Thank you!")
     }
 
     // fetching to the Stripe API. get the token as first parameters for free from the function.
     const onToken = (token) => {
-            // save the token id to a variable to then use it in the body of the fetch.
-            const charge = {
-                token: token.id
-            };
-    
-            // save the body of the fetch in variable
-            const config = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    // Stripe API need at least a token and a price.
-                    charge: charge,
-                    price: totalWithShipping * 100
-                })
-            };
+        // save the token id to a variable to then use it in the body of the fetch.
+        const charge = {
+            token: token.id
+        };
 
-            // fetch to the charge controller which handles the Stripe API transaction.
-            fetch('https://watif-api.herokuapp.com/charges', config)
-            .then(res => res.json())
+        // fetch to the charge controller which handles the Stripe API transaction.
+        fetch('https://watif-api.herokuapp.com/charges', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                // Stripe API need at least a token and a price.
+                charge: charge,
+                price: totalWithShipping * 100
+            })
+        })
+        .then(res => res.json())
 
-            // fetch the order_joiner to create the order when checking out.
-            fetch('https://watif-api.herokuapp.com/order_joiners', {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                    "Authorization": `bearer ${localStorage.token}`
-                }
-            })
-            .then(r => r.json())
-            .then(newOrder => {
-                // send the new order to the state by calling the createOrder action which will trigger the store to call the reducer to change the state.
-                props.createOrder(newOrder)
-            })
+        // fetch the order_joiner to create the order when checking out.
+        fetch('https://watif-api.herokuapp.com/order_joiners', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "Authorization": `bearer ${localStorage.token}`
+            }
+        })
+        .then(r => r.json())
+        .then(newOrder => {
+            // send the new order to the state by calling the createOrder action which will trigger the store to call the reducer to change the state.
+            props.createOrder(newOrder)
+        })
     }
 
     if(props.userCart){
         return (
-    
             <Segment>
                 <div className="checkout-info">
                     <div className="item-total-price">
@@ -84,7 +82,7 @@ const CheckoutCard = (props) => {
                     </div>
                     <div className="item-total-price">
                         <p className="items-shipping-title">Shipping: </p>
-                        <p className="items-cart-shipping">{total >= 20 ? "$10" : "$5"}</p>
+                        <p className="items-cart-shipping">{total >= 20 ? "$10" : "$0"}</p>
                     </div>
                     <hr/>
                     <div className="item-total-price">
@@ -100,7 +98,7 @@ const CheckoutCard = (props) => {
                         billingAddress
                         shippingAddress
                     >
-                    <Button className="checkout-btn">Checkout</Button>
+                    <Button onClick={checkOutMessage} className="checkout-btn">Checkout</Button>
                     </StripeCheckout>
                 </div>
             </Segment>

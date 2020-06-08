@@ -8,7 +8,7 @@ const ItemInCartContainer = (props) => {
     // check if the user cart exist. React Async functionality.
     if(props.userCart){
         // mapping over the cart to display each item in the cart.
-    let cartItem = props.userCart.map(cartItem => <ItemInfoCard key={cartItem.id} item={cartItem.item} cart_joiner={cartItem.id} cart_joiner_quantity={cartItem.quantity}/>)
+    let cartItem = props.userCart.map(cartItem => <ItemInfoCard key={cartItem.id} item={cartItem.item} cart_joiner_id={cartItem.id} cart_joiner_quantity={cartItem.quantity}/>)
     
         return (
             <div>

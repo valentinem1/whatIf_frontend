@@ -9,10 +9,8 @@ const ItemInfoCard = (props) => {
 
     // get called when clicking remove from cart button.
     const removeItemFromCart = () => {
-        // save the cart_joiner id in variable to use it in dynamic fetch url.
-        let cart_joiner_id = props.cart_joiner
-
-        fetch(`https://watif-api.herokuapp.com/cart_joiners/${cart_joiner_id}`, {
+        // pass the cat_joiner_id in the url to delete the item clicked on.
+        fetch(`https://watif-api.herokuapp.com/cart_joiners/${props.cart_joiner_id}`, {
             method: "DELETE"
         })
         .then(r => r.json())
@@ -26,6 +24,7 @@ const ItemInfoCard = (props) => {
     }
 
     if(props.item){
+        // reuse the component to show items in cart on the cart page and item ordered on the profile page.
         return (
             <>
             {props.pathname === "/profile" ? 
